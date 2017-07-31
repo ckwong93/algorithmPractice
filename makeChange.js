@@ -29,7 +29,7 @@ changePossibilitiesBottomUp(6,[1,2,3,4])
 //
 //
 // for visualization purposes:
-// 
+//
 // ways to get amount with denominations
 // amt =                  0, 1, 2, 3, 4, 5, 6
 // 0c =                 [ 1, 0, 0, 0, 0, 0, 0]
@@ -37,3 +37,6 @@ changePossibilitiesBottomUp(6,[1,2,3,4])
 // 0c &1c &2c =         [ 1, 1, 2, 2, 3, 3, 4]
 // 0c &1c &2c &3c =     [ 1, 1, 2, 3, 4, 5, 7]
 // 0c &1c &2c &3c &4c = [ 1, 1, 2, 3, 5, 6, 9]
+
+
+// review recursion and memoization!!
