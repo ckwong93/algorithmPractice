@@ -4,60 +4,67 @@
 // EXAMPLE
 // pale, pIe -> true pales. pale -> true pale. bale -> true pale. bake -> false
 
-function oneAway(string1, string2) {
+function oneAway(string1,string2){
 
-    function checkForMissing(first, second) {
-        // if diff length of two string, auto fail
-        if (first.length !== second.length - 1) {
-            return false
-        } else {
-            // validator will be the 1 item diff leeway, if validator appears more then once, auto fail
-            var validator = false;
-            var firstIndex = 0;
-            var secondIndex = 0;
-
-            while (firstIndex < first.length) {
-                if (first[firstIndex] !== second[secondIndex]) {
-                    if (validator) {
-                        return false;
-                    } else {
-                        validator = true;
-                    }
-                } else {
-                    firstIndex++;
-                    secondIndex++;
-                }
-            }
-            return true;
-        }
-
+  function checkForMissing(first,second){
+    // if diff length of two string, auto fail
+    if(first.length !== second.length-1){
+      return false
     }
+    else{
+      // validator will be the 1 item diff leeway, if validator appears more then once, auto fail
+      var validator = false;
+      var firstIndex = 0;
+      var secondIndex = 0;
 
-    function checkForDiff(first, second) {
-        if (first.length !== second.length) {
+      while( firstIndex < first.length){
+        if( first[firstIndex] !== second[secondIndex]){
+          if(validator){
             return false;
-        } else {
-            var validator = false;
-
-            var firstIndex = 0;
-            var secondIndex = 0;
-
-            while (firstIndex < first.length) {
-                if (first[firstIndex] !== second[secondIndex]]) {
-                if(validator) {
-                    return false
-                } else {
-                    validator = true
-                }
-            }
-            firstIndex++;
-            secondIndex++
+          }
+          else{
+            validator = true;
+          }
         }
-        return true;
+        else{
+          firstIndex++;
+          secondIndex++;
+        }
+      }
+      return true;
     }
-}
 
-return checkOneMissing(string1, string2) || checkOneMissing(string2, string1) || checkOneDiff(string1, string2)
+  }
+
+  function checkForDiff(first,second){
+    if(first.length !== second.length){
+      return false;
+    }
+    else{
+      var validator = false;
+
+      var firstIndex = 0;
+      var secondIndex = 0;
+
+      while(firstIndex < first.length){
+        if(first[firstIndex] !== second[secondIndex]]){
+          if(validator){
+            return false
+          }
+          else{
+            validator = true
+          }
+        }
+        firstIndex++;
+        secondIndex++
+      }
+      return true;
+    }
+  }
+
+
+
+ return checkOneMissing(string1, string2) || checkOneMissing(string2, string1) || checkOneDiff(string1, string2)
 
 }
 
