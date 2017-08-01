@@ -5,6 +5,9 @@ function isUniqueString(string){
   var list = {};
 
   for(var i = 0; i < letters.length; i++){
+    // this will iterate through each letter and check if it exists
+    // if it doesnt exist, it will be added to the obj. if it does exist, loop will
+    // break and it will return false
     if(!list[letters[i]]){
       list[letters[i]] = true
     }
