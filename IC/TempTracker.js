@@ -9,56 +9,56 @@
 
 function tempTracker(){
 
-  // getMode
-  this.occurrences = [];
-  for (var i = 0; i < 111; i++){
-    this.occurrences[i] = 0;
+  // mode
+  this.occurences = [];
+  for(var i = 0; i < 300; i++){
+    this.occurences[i] = 0;
   }
-  this.maxOccurences = 0;
-  this.mode = null
-  // getMean
-  this.totalNumbersCount = 0;
+  this.highestOccurences = 0;
+  this.mode = null;
+
+
+  // mean
+  this.totalNumberCount = 0;
   this.totalSum = 0;
   this.mean = null;
 
-  // getMax and getMin
-  // by default these values are set to null, will change as temps are added in
-  this.minTemp = null;
-  this.maxTemp = null;
+  // max/min
+  this.max = null;
+  this.min = null;
 }
 
 tempTracker.prototype.insert = function(temperature){
-  
-  // getmode
+
+  // mode
   this.occurences[temperature]++;
-  if (this.occurences[temperature] > this.maxOccurences){
-    this.mode = temperature;
-    this.maxOccurences = this.occurences[temperature];
+  if(this.occurences[temperature] > this.highestOccurences){
+    this.mean = temperature;
+    this.highestOccurences = this.occurences[temperature];
   }
-  // getmean
-  this.totalNumbersCount++;
+  // mean
+  this.totalNumberCount++;
   this.totalSum += temperature;
-  this.mean = this.totalSum / this.totalNumbersCount;
+  this.mean = this.totalSum / this.totalNumberCount;
 
+  // max/min
+  if(this.max === null || this.max < temperature){
+    this.max = temperature;
+  };
 
-  // getMax and getMin
-  if (this.minTemp === null || temperature < this.minTemp){
-    this.minTemp = temperature
-  }
-  if (this.maxTemp === null || temperature > this.maxTemp){
-    this.maxTemp = temperatuer
-  }
+  if(this.min === null || this.min > temperature){
+    this.min = temperature;
+  };
+}
+
+tempTracker.prototype.max = function(){
+  return this.max;
 };
 
-tempTracker.prototype.getMax = function(){
-  return this.maxTemp;
+tempTracker.prototype.min = function(){
+  return this.min;
 };
 
-
-tempTracker.prototype.getMin = function(){
-  return this.minTemp;
-};
-
-tempTracker.prototype.getMean = function(){
-  return this.mean
+tempTracker.prototype.mean = function(){
+  return thisl.
 }
