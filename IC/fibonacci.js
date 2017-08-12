@@ -26,7 +26,7 @@ function fibonacci(n){
   }
 }
 
-IC solution...similar to first non-recursive solution with edge case (neg nums) accounted for
+// IC solution...similar to first non-recursive solution with edge case (neg nums) accounted for
 
 function fib(n) {
 
