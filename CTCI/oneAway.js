@@ -47,7 +47,7 @@ function oneAway(string1,string2){
       var secondIndex = 0;
 
       while(firstIndex < first.length){
-        if(first[firstIndex] !== second[secondIndex]]){
+        if(first[firstIndex] !== second[secondIndex]){
           if(validator){
             return false
           }
@@ -64,10 +64,10 @@ function oneAway(string1,string2){
 
 
 
- return checkOneMissing(string1, string2) || checkOneMissing(string2, string1) || checkOneDiff(string1, string2)
+ return checkForMissing(string1, string2) || checkForMissing(string2, string1) || checkForDiff(string1, string2)
 
 }
 
-console.log(oneAway('civic', 'civci'), true);
+console.log(oneAway('civic', 'civci'), false);
 console.log(oneAway('pales', 'pale'), true);
 console.log(oneAway('pale', 'bale'), true);
