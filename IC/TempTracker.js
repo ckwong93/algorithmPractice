@@ -33,7 +33,7 @@ tempTracker.prototype.insert = function(temperature){
   // mode
   this.occurences[temperature]++;
   if(this.occurences[temperature] > this.highestOccurences){
-    this.mean = temperature;
+    this.mode = temperature;
     this.highestOccurences = this.occurences[temperature];
   }
   // mean
@@ -60,5 +60,5 @@ tempTracker.prototype.min = function(){
 };
 
 tempTracker.prototype.mean = function(){
-  return thisl.
+  return this.totalSum / this.totalNumberCount
 }
