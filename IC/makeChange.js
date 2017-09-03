@@ -38,5 +38,6 @@ changePossibilitiesBottomUp(6,[1,2,3,4])
 // 0c &1c &2c &3c =     [ 1, 1, 2, 3, 4, 5, 7]
 // 0c &1c &2c &3c &4c = [ 1, 1, 2, 3, 5, 6, 9]
 
+// remainder of higheramt - coin is added to the array value at ways[remainder]
 
 // review recursion and memoization!!
