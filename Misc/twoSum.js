@@ -43,3 +43,15 @@ function twoSum(input, nums){
   }
   return 'no matches'
 }
+
+// double loop method
+function twoSum(num,input){
+  for(var i = 0; i < input.length; i++){
+    for(var j = 1; j < input.length; j++){
+      if(input[i] + input[j] === num){
+        return true
+      }
+    }
+  }
+  return false
+}
