@@ -14,5 +14,5 @@ function reverseInPlace(string){
   return converted = converted.substr(0,converted.length - 1)
 }
 
-// reverseInPlace("i am cool")
+reverseInPlace("i am cool")
 // equals 'i ma looc'
