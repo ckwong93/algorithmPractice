@@ -76,3 +76,23 @@ return productsOfItemsExceptIndex;
 // console.log(getProductsOfAllIntsExceptAtIndex(nums))
 // expected output = [60,40,30,24]
 // actual output = [60,40,30,24]
+
+
+// alternative = divide product of all nums by value at index
+function getProductsOfAllIntsExceptAtIndex(arr){
+  var savedNumbers = arr;
+  var morphed = [];
+  var product = 1;
+
+  for(var i = 0; i < arr.length; i++){
+    product*=arr[i];
+  }
+
+  for(var j = 0; j < arr.length; j++){
+    morphed.push(product/savedNumbers[j]);
+  }
+
+  return morphed;
+}
+
+getProductsOfAllIntsExceptAtIndex([2,3,4,5]);
