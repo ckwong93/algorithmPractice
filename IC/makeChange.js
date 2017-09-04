@@ -21,7 +21,7 @@ function changePossibilitiesBottomUp(amount, denominations) {
     return ways[amount];
 }
 
-changePossibilitiesBottomUp(6,[1,2,3,4])
+console.log(changePossibilitiesBottomUp(5,[1,2]))
 // expected output = 9,
 // actual output = 9
 //
