@@ -11,18 +11,18 @@ function fibonacci(n){
   var fibo = [0,1];
 
   for(i = 0; i < n; i++){
-    fibo[i] = fibo[i-1] + fibo[i-2]
+    fibo[i] = fibo[i-1] + fibo[i-2];
   }
-  return fibo[n]
+  return fibo[n];
 }
 
 
 // recursive solution
 function fibonacci(n){
   if(n < 2){
-    return n
+    return n;
   }else{
-    return fibonacci(n-1) + fibonacci(n-2)
+    return fibonacci(n-1) + fibonacci(n-2);
   }
 }
 
