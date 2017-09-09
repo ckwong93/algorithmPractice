@@ -4,11 +4,11 @@
 function isPrime(num){
   for(var divisor = 2; divisor < num; divisor++){
     if(num % divisor === 0){
-      console.log(divisor)
-      return 'NOT PRIME'
+      console.log(divisor);
+      return 'NOT PRIME';
     }
   }
-  return 'PRIME...OPTIMUS PRIME'
+  return 'PRIME...OPTIMUS PRIME';
 }
 
 // using while loop
@@ -17,11 +17,11 @@ function isPrime(num){
 
   while(num > divisor){
     if(num % divisor === 0){
-      return 'NOT PRIME'
+      return 'NOT PRIME';
     }
     else{
-      divisor++
+      divisor++;
     }
   }
-  return 'PRIME...OPTIMUS PRIME'
+  return 'PRIME...OPTIMUS PRIME';
 }
