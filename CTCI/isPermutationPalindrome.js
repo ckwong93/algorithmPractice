@@ -25,4 +25,4 @@ function isPermPalin(string){
 }
 
 
-isPermPalin('tacoca t')
+console.log(isPermPalin('tacoca t'));
