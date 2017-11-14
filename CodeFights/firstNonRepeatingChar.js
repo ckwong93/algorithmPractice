@@ -37,13 +37,13 @@ function firstNotRepeatingCharacter(str){
       letterDatabase[letters[i]]++;
     }
     else{
-      letterDatabase[letters[i]] = 1
+      letterDatabase[letters[i]] = 1;
     }
   }
   for(var j in letterDatabase){
     if(letterDatabase[j] === 1 && letterDatabase[j] != " "){
-      return j
+      return j;
     }
   }
-  return '_'
+  return '_';
 }
