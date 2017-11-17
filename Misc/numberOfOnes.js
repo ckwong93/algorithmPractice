@@ -15,26 +15,29 @@
 // [0, 0, 0] --> 0
 // [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1] --> 7
 
-function oneCounter(numbers){
-  var end = numbers.length - 1;
+function closestValue(numbers, target){
   var start = 0;
-  var mid;
-  var count = 0;
+  var end = numbers.length - 1;
+  var mid = Math.floor((start + end)/2);
+  var diff = Math.abs(target - mid);
+  var closest;
 
   while(start <= end){
-    mid = Math.floor((start+end)/2);
-    if(numbers[mid] === 1){
-      end = mid -1;
-    }
-    else if(numbers[mid] === 0){
+    mid = Math.floor((start + end)/2);
+    if(Math.abs(target - numbers[mid]) <= diff){
+      diff = Math.min(Math.abs(target - numbers[mid]),diff);
+      closest = numbers[mid];
       start = mid + 1;
     }
+    else if(Math.abs(target - numbers[mid]) >= diff){
+      return closest;
+    }
   }
-  count = numbers.length - start;
-  return count;
+  return closest;
 }
 
 
-console.log(oneCounter([0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]));
-console.log(oneCounter([0, 0, 0]));
-console.log(oneCounter([0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1]));
+
+console.log(closestValue([1, 2, 3, 5, 5, 7, 9, 10, 11], 6));
+console.log(closestValue([1, 2, 3], 8));
+console.log(closestValue([1, 10, 22, 59, 67, 72, 100], 70));
