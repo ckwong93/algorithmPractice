@@ -29,7 +29,6 @@ function rgbSet(string){
       letterCount[letters[i]] = 1;
     }
   }
-  // console.log(letterCount.r);
   if(letterCount.r > 0 && letterCount.g > 0 && letterCount.b > 0){
     return Math.min(letterCount.r,letterCount.g,letterCount.b);
   }else{

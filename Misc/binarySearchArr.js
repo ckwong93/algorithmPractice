@@ -3,21 +3,22 @@
 //
 // this will return position of num in the array
 
-function binarySearch(arr,num){
+
+function binarySearch(array,target){
   var min = 0;
-  var max = arr.length -1;
+  var max = array.length - 1;
   var mid;
 
   while(min <= max){
-    mid = (min + max)/2;
-    if(arr[mid] === num){
+    mid = Math.floor((min + max)/2);
+    if(array[mid] === target){
       return mid;
     }
-    if(num <= arr[min]){
-      min = mid + 1;
-    }
-    else if( num >= arr[min]){
+    else if(target < array[mid]){
       max = mid - 1;
+    }
+    else{
+      min = mid + 1;
     }
   }
   return -1;
@@ -25,3 +26,4 @@ function binarySearch(arr,num){
 
 
 console.log(binarySearch([1,2,3,4,5],3));
+console.log(binarySearch([1,2,3,4,5,6,7,8,9,10],7));
