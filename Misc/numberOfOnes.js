@@ -15,29 +15,25 @@
 // [0, 0, 0] --> 0
 // [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1] --> 7
 
-function closestValue(numbers, target){
-  var start = 0;
-  var end = numbers.length - 1;
-  var mid = Math.floor((start + end)/2);
-  var diff = Math.abs(target - mid);
-  var closest;
+function bitCount(array){
+  let start = 0;
+  let end = array.length - 1;
+  let mid;
 
   while(start <= end){
     mid = Math.floor((start + end)/2);
-    if(Math.abs(target - numbers[mid]) <= diff){
-      diff = Math.min(Math.abs(target - numbers[mid]),diff);
-      closest = numbers[mid];
-      start = mid + 1;
+    if(array[mid] === 0){
+      start = mid + 1
     }
-    else if(Math.abs(target - numbers[mid]) >= diff){
-      return closest;
+    else if(array[mid] === 1){
+      end = mid - 1;
     }
   }
-  return closest;
+  return array.length - start
 }
 
 
 
-console.log(closestValue([1, 2, 3, 5, 5, 7, 9, 10, 11], 6));
-console.log(closestValue([1, 2, 3], 8));
-console.log(closestValue([1, 10, 22, 59, 67, 72, 100], 70));
+console.log(bitCount([0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]));
+console.log(bitCount([0, 0, 0]));
+console.log(bitCount([0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1]));
