@@ -21,4 +21,21 @@ function nthFibonacciBtm(number){
   return fibo;
 }
 
-console.log(nthFibonacciBtm(10));
+// console.log(nthFibonacciBtm(10));
+
+
+function nthFibonacciTop(number){
+  let result;
+
+  function fiboHelp(i){
+    if(i < 2){
+      return i;
+    }
+    return fiboHelp(i-1) + fiboHelp(i-2);
+  }
+
+  result = fiboHelp(number);
+  return result;
+}
+
+console.log(nthFibonacciTop(3));
