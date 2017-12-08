@@ -60,3 +60,23 @@ function printInOrder(input){
 // Time: O(n)
 // Space: O(1)
 console.log(printInOrder([1,2,3,4,5]));
+
+
+
+// // Print each item in an array backwards
+// // Time: O(n)
+// // Space: O(n)
+
+function printBackwards(input){
+  let i = input.length;
+  function printHelper(i){
+    if(i < 0){
+      return;
+    }
+    console.log(i);
+    printHelper(i-1)
+  };
+  printHelper(i)
+}
+
+// console.log(printBackwards([1,2,3,4,5]));
