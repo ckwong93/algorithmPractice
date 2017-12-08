@@ -38,4 +38,25 @@ function nthFibonacciTop(number){
   return result;
 }
 
-console.log(nthFibonacciTop(3));
+// console.log(nthFibonacciTop(3));
+
+
+
+// // Print each item in an array in order
+
+function printInOrder(input){
+
+  function printHelper(i){
+   if(i > input.length - 1){
+     return;
+   }
+    console.log(input[i]);
+    printHelper(i+1);
+  }
+
+  printHelper(0);
+}
+
+// Time: O(n)
+// Space: O(1)
+console.log(printInOrder([1,2,3,4,5]));
