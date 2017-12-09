@@ -178,3 +178,25 @@ function mergeSortedArr(arr1,arr2){
   return result;
 }
 console.log(mergeSortedArr([1,2,3],[2,3,4]));
+
+
+// Flatten a nested array
+function flattenArr(array){
+  let result = [];
+
+  function flattenHelper(subarr){
+    for(var i = 0; i < subarr.length; i++){
+      if(Array.isArray(subarr[i])){
+        flattenHelper(subarr[i]);
+      }
+      else{
+        result.push(subarr[i]);
+      }
+    }
+  }
+  flattenHelper(array);
+  return result;
+}
+
+// // Time: O(n)
+// // Space: O(n)
