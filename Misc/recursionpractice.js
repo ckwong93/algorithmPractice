@@ -143,3 +143,38 @@ function findPower(base,exponent){
   return result;
 }
 console.log(findPower(5,3));
+
+
+
+
+// Merge two sorted arrays
+// Time: O(n)
+// Space: O(n)
+function mergeSortedArr(arr1,arr2){
+  let result = [];
+
+  function mergeHelper(i,j){
+    if(!arr1[i] && !arr2[j]){
+      return;
+    }
+    if(arr1[i] && !arr2[j]){
+      result.push(arr1[i]);
+      mergeHelper(i+1,j)
+    }
+    else if (arr2[j] && !arr1[i]){
+      result.push(arr2[j]);
+      mergeHelper(i,j+1);
+    }
+    else if(arr1[i] < arr2[j]){
+      result.push(arr1[i]);
+      mergeHelper(i+1,j);
+    }
+    else{
+      result.push(arr2[j]);
+      mergeHelper(i,j+1);
+    }
+  }
+  mergeHelper(0,0);
+  return result;
+}
+console.log(mergeSortedArr([1,2,3],[2,3,4]));
