@@ -22,19 +22,19 @@
 function closestValue(numbers, target){
   var start = 0;
   var end = numbers.length - 1;
-  var mid;
-  var diff = Math.abs(numbers[0] - numbers[numbers.length - 1]);
+  var mid = Math.floor((start + end)/2);
+  var diff = Math.abs(target - mid);
   var closest;
 
   while(start <= end){
     mid = Math.floor((start + end)/2);
-    if(Math.abs(target - mid) < diff){
-      diff = Math.abs(target - mid);
-      closest = mid;
+    if(Math.abs(target - numbers[mid]) <= diff){
+      diff = Math.min(Math.abs(target - numbers[mid]),diff);
+      closest = numbers[mid];
+      start = mid + 1;
     }
-    else{
-      start = mid - 1;
-      end = mid + 1;
+    else if(Math.abs(target - numbers[mid]) >= diff){
+      return closest;
     }
   }
   return closest;

@@ -20,26 +20,22 @@
 //
 
 function squareRoot(number){
-  var low = 1;
-  var high = number/2;
-  var mid;
+  let start = 1;
+  let end = number;
+  let mid;
 
-  if(number <= 0){
-    return 'invalid number, try again';
-  }
-
-  while(low <= number){
-      mid = (low + high)/2;
-      if(mid * mid === number){
-        return mid.toFixed(6);
-      }
-      else if(mid * mid < number){
-        low = mid + 1;
-      }
-      else if(mid * mid > number){
-        high = mid - 1;
-      }
+  while(start < number){
+    mid = ((start + end)/2);
+    if(mid * mid == number){
+       return mid.toFixed(6);
+    }else if(mid * mid > number){
+      end = mid - 1;
+      // console.log(end,'end');
+    }else if (mid * mid < number){
+      start = mid + 1;
+      // console.log(start,'start');
     }
+  }
 }
 
 console.log(squareRoot(4));
