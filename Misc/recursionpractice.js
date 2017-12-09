@@ -121,4 +121,25 @@ function twoItemArr(input){
   twoHelp(0);
   return result;
 }
-console.log(twoItemArr([1,2,3,4,5,6]));
+// console.log(twoItemArr([1,2,3,4,5,6]));
+
+
+
+// Given a base and an exponent, create a function to find the power
+// Time: O(n)
+// Space: O(1)
+
+function findPower(base,exponent){
+  let result = 1;
+
+  function findHelper(i){
+    if(i > exponent){
+      return;
+    }
+    result *= base;
+    findHelper(i + 1);
+  }
+  findHelper(1);
+  return result;
+}
+console.log(findPower(5,3));
