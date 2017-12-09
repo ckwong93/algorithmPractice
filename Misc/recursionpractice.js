@@ -80,3 +80,26 @@ function printBackwards(input){
 }
 
 // console.log(printBackwards([1,2,3,4,5]));
+
+
+
+
+// // Reverse a string
+// // Time: O(n)
+// // Space: O(n)
+
+function stringReverser(string){
+  let reversed = "";
+  let i = string.length - 1;
+
+  function reverseHelper(i){
+    if(i < 0){
+      return;
+    }
+    reversed += string.charAt(i);
+    reverseHelper(i-1);
+  };
+  reverseHelper(i);
+  return reversed;
+}
+console.log(stringReverser("hello"));
