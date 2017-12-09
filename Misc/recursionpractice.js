@@ -102,4 +102,23 @@ function stringReverser(string){
   reverseHelper(i);
   return reversed;
 }
-console.log(stringReverser("hello"));
+// console.log(stringReverser("hello"));
+
+
+// // Given an array of integers, create an array of two-item arrays
+// Time: O(n)
+// Space: O(n)
+function twoItemArr(input){
+  let result = [];
+
+  function twoHelp(i){
+    if(i > input.length - 1){
+      return;
+    }
+    result.push([input[i],input[i+1]]);
+    twoHelp(i+2);
+  }
+  twoHelp(0);
+  return result;
+}
+console.log(twoItemArr([1,2,3,4,5,6]));
