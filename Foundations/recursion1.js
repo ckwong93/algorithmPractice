@@ -146,8 +146,20 @@
  */
  // had trouble with this one...needed to research answer online
  function flatten(arr){
-   // YOUR WORK HERE
+  let result = [];
 
+  function traverse(subarr){
+    for(var i = 0; i < subarr.length; i++){
+      if(Array.isArray(subarr[i])){
+        traverse(subarr[i])
+      }
+      else{
+        result.push(subarr[i])
+      }
+    }
+  }
+   traverse(arr);
+   return result;
  }
 /**
  * 2f. Given a base and an exponent, create a function to find the power
