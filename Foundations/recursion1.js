@@ -196,9 +196,25 @@
  *
  * Example: merge([1, 4, 7], [2, 3, 6, 9]) => [1, 2, 3, 4, 6, 7, 9]
  */
- function merge(arr1, arr2){
-   // YOUR WORK HERE
 
+ function merge(arr1, arr2){
+  let result = [];
+
+   function traverse(leftIndex,rightIndex){
+     if(result.length == arr1.length + arr2.length){
+       return;
+     }
+     if(arr1[leftIndex] < arr2[rightIndex] || !arr2[rightIndex]){
+       result.push(arr1[leftIndex]);
+       traverse(leftIndex + 1,rightIndex);
+     }
+     else if(arr1[leftIndex] >= arr2[rightIndex] || !arr1[leftIndex]){
+       result.push(arr2[rightIndex]);
+       traverse(leftIndex,rightIndex + 1);
+     }
+   }
+   traverse(0,0);
+   return result;
  }
 
  /**
