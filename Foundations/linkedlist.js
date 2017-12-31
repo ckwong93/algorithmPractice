@@ -171,9 +171,49 @@ class LinkedList {
 // target practice --- no tests available
 
 
+class targetListNode {
+  constructor(value = null) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
 
+// DO NOT EDIT
+// Generate a linked list from an array
+function generateList(arr) {
+  if (arr.length === 0) { return null; }
+  let head = new targetListNode(arr[0]);
+  let current = head;
+  for (let i = 1; i < arr.length; i++) {
+    current.next = new ListNode(arr[i]);
+    current = current.next;
+  }
+  return head;
+}
 
+/**
+ * 1a. Create a method which prints the value of each node until the tail
+ *
+ * Input: node {ListNode}
+ * Output: {undefined}
+ *
+ * Example: (1) --> (5) --> (7) --> (10)
+ *
+ *          1
+ *          5
+ *          7
+ *          10
+ */
+
+// Time Complexity: O(n)
+// Auxiliary Space Complexity: O(1)
+function printForward(node) {
+  while(node){
+    console.log(node.value);
+    node = node.next
+  }
+}
 
 ////////////////////////////////////////////////////////////
 ///////////////  DO NOT TOUCH TEST BELOW!!!  ///////////////
