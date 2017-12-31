@@ -95,7 +95,32 @@ class LinkedList {
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(N)
   insert(value, index) {
-
+    let newItem = new ListNode(value);
+    let current = this.head;
+    if(index < 0 || index > this.length){
+      return;
+    }
+    if(!current){
+      this.head = newItem;
+      this.tail = newItem;
+    }
+    else if(index === 0){
+      newItem.next = this.head;
+      this.head = newItem
+    }
+    else if(index === this.length){
+      this.tail.next = newItem;
+      this.tail = newItem;
+    }
+    else {
+      for(var i = 0; i < index - 1; i++){
+        current = current.next;
+      }
+      let temp = current.next;
+      current.next = newItem;
+      newItem.next = temp;
+    }
+    this.length++;
   }
 
   // Time Complexity: O(1)
