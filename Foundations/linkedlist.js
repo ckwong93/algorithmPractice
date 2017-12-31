@@ -238,7 +238,20 @@ function printForward(node) {
      console.log(node.value);
  }
 
-
+ // Time Complexity: O(N)
+ // Auxiliary Space Complexity: O(1)
+ function reverse(node) {
+   if(node === null){return node;}
+   let temp;
+   let prev = null;
+   let current = node;
+   while(current){
+     temp = current.next;
+     current.next = prev;
+     [prev,current] = [current,temp];
+   }
+   return prev;
+ }
 ////////////////////////////////////////////////////////////
 ///////////////  DO NOT TOUCH TEST BELOW!!!  ///////////////
 ////////////////////////////////////////////////////////////
