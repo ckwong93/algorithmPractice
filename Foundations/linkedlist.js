@@ -117,6 +117,7 @@ class LinkedList {
         current = current.next;
       }
       let temp = current.next;
+      // current.next = newItem.next
       current.next = newItem;
       newItem.next = temp;
     }
