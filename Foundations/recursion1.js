@@ -174,8 +174,16 @@
  */
 
  function power(base, exponent) {
-   // YOUR WORK HERE
-
+   let result = 1;
+   function traverse(num){
+     if(num > exponent){
+       return;
+     }
+     result *= base;
+     traverse(num + 1);
+   }
+  traverse(1);
+  return result;
  }
 
 
