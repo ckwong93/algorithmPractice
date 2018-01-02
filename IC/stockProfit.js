@@ -81,6 +81,8 @@ if(stockPricesYesterday.length < 2){
   return maxProfit;
 }
 
-getMaxProfit([5,1,2,3,4,5])
+getMaxProfit([5,1,2,3,4,5]);
+console.log(getMaxProfit([7,6,4,3,1]));
+
 // expected output = 4
 // actual output = 4
