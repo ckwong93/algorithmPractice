@@ -71,7 +71,14 @@ function selectionSort(input){
 // Time Complexity: O(N^2)
 // Auxiliary Space Complexity: O(1)
 function bubbleSort(input){
-
+  for(var i = 0; i < input.length; i++){
+    for(var j = 1; j < input.length; j++){
+      if(input[j] < input[j-1]){
+        [input[j],input[j-1]] = [input[j-1],input[j]]
+      }
+    }
+  }
+  return input
 }
 
 
