@@ -63,8 +63,19 @@ function insertionSort(input) {
 
 // Time Complexity: O(N^2)
 // Auxiliary Space Complexity: O(1)
+// [3,9,1,4,7] --> [1,3,4,7,9]
 function selectionSort(input){
-
+  let min;
+  for(var i = 0; i < input.length; i++){
+    min = i
+    for(var j = i+1; j < input.length; j++){
+      if(input[j] < input[min]){
+        min = j
+      }
+    }
+    [input[i],input[min]] = [input[min],input[i]]
+  }
+  return input
 }
 
 
