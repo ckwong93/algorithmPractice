@@ -45,8 +45,20 @@
 
 // Time Complexity: O(N^2)
 // Auxiliary Space Complexity: O(1)
+// [3,9,1,4,7] --> [1,3,4,7,9]
 function insertionSort(input) {
-
+  let currentItem;
+  let temp;
+  for(var i = 1; i < input.length; i++){
+    for(var j = 0; j < i; j++){
+      currentItem = input[i];
+      if(currentItem < input[j]){
+        temp = input.splice(i,1);
+        input.splice(j,0,temp[0]);
+      }
+    }
+  }
+  return input
 }
 
 // Time Complexity: O(N^2)
