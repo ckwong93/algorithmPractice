@@ -129,12 +129,14 @@ function bfs(node) {
  */
 function dfsPre(node) {
   let result = [];
+  let count = 0;
 
   function dfs(node){
     if(!node){
       return
     }
     result.push(node.value);
+    count++;
     dfs(node.left);
     dfs(node.right);
   }

@@ -17,6 +17,21 @@ Space: O(N)
 `root of following tree --> 3`
 ![binary tree](http://res.cloudinary.com/outco/image/upload/c_scale,h_450,q_81,r_0,w_600,x_1039,y_659/v1497392714/Binary_Tree_-_17_ytasm9.png)
 
+// can implement a bfs or dfs to count each leaf node
+`````
+function countLeaf(node){
+  let count = 0;
+  function dfs(node){
+    if(!node){
+      return
+    };
+    count++;
+    dfs(node.left);
+    dfs(node.right);
+  }
+  return count;
+}
+```
 
 ## 2. Max Value
 
