@@ -95,7 +95,26 @@ const sampleTree = deserialize(arr);
  */
 
 function bfs(node) {
+  if(!node){
+    return [];
+  }
+  let queue = [];
+  let result = [];
+  queue.push(node);
+  result.push(node.value);
 
+  while(queue.length > 0){
+    let current = queue.shift();
+    if(current.left){
+      queue.push(current.left);
+      result.push(current.left.value);
+    }
+    if(current.right){
+      queue.push(current.right);
+      result.push(current.right.value);
+    }
+  }
+  return result;
 }
 
 
