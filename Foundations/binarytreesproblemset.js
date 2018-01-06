@@ -94,6 +94,7 @@ function maxDepth(root){
     right = maxDepth(node.right) + 1;
     depth = Math.max(left, right);
   }
+  dfs(root);
   return depth;
 }
 ```
@@ -183,7 +184,7 @@ function getWidths(root){
 
 ## 7. Children Sum Property
 
-*Given a root node of a binary tree, determine if each node's value is the sum of it's childrens' values.  Leaf nodes do not have to meet this condition.*
+*Given a root node of a binary tree, determine if each nodes value is the sum of it's childrens' values.  Leaf nodes do not have to meet this condition.*
 
 **Parameters**
 Input: node {TreeNode}
