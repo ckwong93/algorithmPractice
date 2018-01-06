@@ -116,6 +116,24 @@ Space: O(N)
 `root of following tree --> [4, 5, 6]`
 ![binary tree](http://res.cloudinary.com/outco/image/upload/c_scale,h_450,q_81,r_0,w_600,x_1039,y_659/v1497392714/Binary_Tree_-_31_tml3dz.png)
 
+
+function getLevel(root,target){
+  let levelItems = [];
+  function traverse(node, level, target){
+    if(!node){
+      return
+    }
+    if(level === target){
+      levelItem.push(node.value)
+    }
+    traverse(node.left, level + 1, target);
+    traverse(node.right, level + 1, target);
+  }
+  traverse(root,0,target);
+  return levelItems
+}
+
+
 ## 5. Invert Tree
 
 *Given a root node of a binary tree, return back the mirror image of that tree.*
@@ -144,6 +162,21 @@ Output: {Array of Integers}
 Time: O(N)
 Space: O(N)
 
+
+function getWidths(root){
+  let results = [];
+  function traverse(node,level){
+    if(!node){return}
+    if(results.length === level){
+      results.push([]);
+    }
+    results[level].push(node.value);
+    traverse(node.left,level+1);
+    traverse(node.right,level+1);
+  }
+  traverse(root,0);
+  return results;
+}
 **Examples**
 `root of following tree --> [[1], [2, 3], [4, 5, 6], [7]]`
 ![binary tree](http://res.cloudinary.com/outco/image/upload/c_scale,h_450,q_81,r_0,w_600,x_1039,y_659/v1497392714/Binary_Tree_-_20_ivkmsq.png)
