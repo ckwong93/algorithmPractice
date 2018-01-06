@@ -63,15 +63,17 @@
 
 
 class TreeNode {
-  constructor(value) {
-    // YOUR WORK HERE
+  constructor(value = null) {
+    this.value = value;
+    this.left = null;
+    this.right = null
   }
 }
 
 class BinarySearchTree {
   constructor() {
-    // YOUR WORK HERE
-
+    this.root = null;
+    this.size = 0;
   }
 
   // Time Complexity: O(log(n)
@@ -86,7 +88,7 @@ class BinarySearchTree {
   // Auxiliary Space Complexity: O(1)
   search(value) {
     // YOUR WORK HERE
-  
+  }
 }
 
 
