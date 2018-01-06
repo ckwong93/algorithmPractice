@@ -128,17 +128,18 @@ function bfs(node) {
  *      NOTE: Confirm with your answer from problem 2b.
  */
 function dfsPre(node) {
-  let results = [];
+  let result = [];
+
   function dfs(node){
     if(!node){
       return
     }
-    results.push(node.value);
+    result.push(node.value);
     dfs(node.left);
     dfs(node.right);
   }
-  dfs(node)
-  return results;
+  dfs(node);
+  return result;
 }
 
 
