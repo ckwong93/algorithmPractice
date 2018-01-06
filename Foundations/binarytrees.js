@@ -79,8 +79,34 @@ class BinarySearchTree {
   // Time Complexity: O(log(n)
   // Auxiliary Space Complexity: O(n)
   insert(value) {
-    // YOUR WORK HERE
-
+    let current = this.root;
+    let newItem = new TreeNode(value);
+    if(this.root === null){
+      this.root = newItem;
+      this.size++;
+      return
+    }
+    while(current){
+      if(current.value > value){
+        if(current.left){
+          current = current.left;
+        }
+        else{
+          current.left = newItem;
+          break;
+        }
+      }
+      else if (current.value <= value){
+        if(current.right){
+          current = current.right
+        }
+        else{
+          current.right = newItem;
+          break;
+        }
+      }
+    }
+    this.size++
   }
 
 
