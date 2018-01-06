@@ -95,27 +95,7 @@ const sampleTree = deserialize(arr);
  */
 
 function bfs(node) {
-  let queue = [];
-  let results = [];
 
-  if(!node){
-    return [];
-  }
-  queue.push(node);
-  results.push(node.value);
-
-  while(queue.length > 0){
-    let currentItem = queue.shift();
-    if(currentItem.left){
-      queue.push(currentItem.left);
-      results.push(currentItem.left.value);
-    }
-    if(currentItem.right){
-      queue.push(currentItem.right);
-      results.push(currentItem.right.value);
-    }
-  }
-  return results;
 }
 
 
@@ -153,6 +133,17 @@ function dfsPre(node) {
  *      NOTE: Confirm with your answer from problem 2b.
  */
 function dfsIn(node) {
+  let result = [];
+  function dfs(node){
+    if(!node){
+      return;
+    }
+    dfs(node.left);
+    result.push(node.value);
+    dfs(node.right);
+  }
+  dfs(node);
+  return result;
 }
 
 
@@ -166,7 +157,18 @@ function dfsIn(node) {
  *      NOTE: Confirm with your answer from problem 2d.
  */
  function dfsPost(node) {
+   let result = [];
 
+   function dfs(node){
+     if(!node){
+       return;
+     }
+     dfs(node.left);
+     dfs(node.right);
+     result.push(node.value);
+   }
+   dfs(node);
+   return result;
  }
 
 function dfsIterative(node){
