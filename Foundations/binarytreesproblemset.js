@@ -50,7 +50,6 @@ Space: O(N)
 ![binary tree](http://res.cloudinary.com/outco/image/upload/c_scale,h_450,q_81,r_0,w_600,x_1039,y_659/v1497392714/Binary_Tree_-_21_xcpnbc.png)
 
 
-```
 function maxValue(node){
   let greatest = node.value;
   let current = node;
@@ -66,7 +65,7 @@ function maxValue(node){
     }
   }
 }
-```
+
 ## 3. Max Depth
 
 *Given a root node of a binary tree, determine the maximum depth of the tree.*
@@ -82,6 +81,23 @@ Space: O(N)
 **Examples**
 `root of following tree --> 3`
 ![binary tree](http://res.cloudinary.com/outco/image/upload/c_scale,h_450,q_81,r_0,w_600,x_1039,y_659/v1497392714/Binary_Tree_-_35_o9mqp1.png)
+
+
+```
+function maxDepth(root){
+  let depth = 0;
+  function dfs(node){
+    if(!node){
+      return 0;
+    }
+    left = maxDepth(node.left) + 1;
+    right = maxDepth(node.right) + 1;
+    depth = Math.max(left, right);
+  }
+  return depth;
+}
+```
+
 
 ## 4. Get Level
 
