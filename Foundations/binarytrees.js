@@ -113,7 +113,19 @@ class BinarySearchTree {
   // Time Complexity: O(log(n))
   // Auxiliary Space Complexity: O(1)
   search(value) {
-    // YOUR WORK HERE
+    let current = this.root;
+    while(current){
+      if(value === current.value){
+        return true;
+      }
+      else if(value > current.value){
+        current = current.right;
+      }
+      else {
+        current = current.left;
+      }
+    }
+    return false
   }
 }
 
