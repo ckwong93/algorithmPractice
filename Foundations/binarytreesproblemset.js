@@ -151,6 +151,18 @@ Space: O(N)
 `root of tree on the left --> root of tree to the right`
 ![binary tree](http://res.cloudinary.com/outco/image/upload/c_scale,h_450,q_81,r_0,w_600,x_1039,y_659/v1497392714/Binary_Tree_-_38_qqwuto.png)
 
+function invertTree(root){
+  function dfs(node){
+    if(!node){
+      return;
+    }
+    dfs(node.left);
+    dfs(node.right);
+    [node.left,node.right] = [node.right,node.left];
+  }
+  dfs(node)
+  return root;
+}
 ## 6. Get Widths
 
 *Given a root node of a binary tree, return an array of the widths at each level*
