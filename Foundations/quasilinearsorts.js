@@ -34,13 +34,16 @@ function quicksort(input) {
   let pivot = Math.floor(input.length/2);
   let left = [];
   let right = [];
-  if(input.length <=1 ){ return input; }
+
+  if(input.length < 2){
+    return input;
+  }
   for(var i = 0; i < input.length; i++){
     if(i !== pivot){
       if(input[i] < input[pivot]){
-        left.push(input[i])
+        left.push(input[i]);
       }
-      else {
+      else{
         right.push(input[i])
       }
     }
@@ -53,9 +56,7 @@ function quicksort(input) {
 // Average Time Complexity: O(nlogn)
 // Average Auxiliary Space Complexity: O(n)
 function mergesort(input) {
-  if(input.length < 2){
-    return input;
-  }
+  if(input.length < 2){ return input;}
   let mid = Math.floor(input.length/2);
   let left = input.slice(0,mid);
   let right = input.slice(mid);
@@ -74,12 +75,12 @@ function mergeHelper(left,right){
       results.push(left[iL]);
       iL++;
     }
-    else if(right[iR] < left[iL] || (right[iR] && !left[iL])){
+    else if (left[iL] > right[iR] || (!left[iL] && right[iR])){
       results.push(right[iR]);
       iR++;
     }
   }
-  return results;
+  return results
 }
 
 
