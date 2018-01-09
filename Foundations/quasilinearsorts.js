@@ -53,11 +53,33 @@ function quicksort(input) {
 // Average Time Complexity: O(nlogn)
 // Average Auxiliary Space Complexity: O(n)
 function mergesort(input) {
+  if(input.length < 2){
+    return input;
+  }
+  let mid = Math.floor(input.length/2);
+  let left = input.slice(0,mid);
+  let right = input.slice(mid);
 
+  return mergeHelper(mergesort(left),mergesort(right));
 }
 
 function mergeHelper(left,right){
+  let iL = 0;
+  let iR = 0;
+  let totalLength = left.length + right.length;
+  let results = [];
 
+  while(iL + iR < totalLength){
+    if(left[iL] <= right[iR] || (left[iL] && !right[iR])){
+      results.push(left[iL]);
+      iL++;
+    }
+    else if(right[iR] < left[iL] || (right[iR] && !left[iL])){
+      results.push(right[iR]);
+      iR++;
+    }
+  }
+  return results;
 }
 
 
