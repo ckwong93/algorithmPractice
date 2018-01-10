@@ -32,16 +32,13 @@
  // * @return {TreeNode}
  */
 var mergeTrees = function(t1, t2) {
-      if(!t1 && !t2){
-        return;
-      }
       if(t1 && t2){
         t1.value = t1.value + t2.value
       } else if(t1 && !t2){
-        t1.value = t1.value
+        return t1
       } else if (!t1 && t2){
-        t1.value = t2.value
+        return t2
       }
-    mergeTrees(t1.left,t2.left);
-    mergeTrees(t1.right,t2.right);
+    t1.left = mergeTrees(t1.left,t2.left);
+    t1.right = mergeTrees(t1.right,t2.right);
 };
