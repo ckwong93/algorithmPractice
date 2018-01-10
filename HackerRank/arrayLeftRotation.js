@@ -25,3 +25,15 @@
 // When we perform  left rotations, the array undergoes the following sequence of changes:
 //
 // Thus, we print the array's final state as a single line of space-separated values, which is 5 1 2 3 4.
+
+function rotateArray(numbers, shifts){
+  let temp = numbers.splice(0,shifts);
+  console.log(temp)
+  temp.forEach(function(item){
+    numbers.push(item);
+  })
+return numbers
+}
+
+
+console.log(rotateArray([1,2,3,4,5],3))
