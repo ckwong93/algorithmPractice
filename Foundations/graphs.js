@@ -118,6 +118,13 @@ class Graph {
    // edges will be an array of id1's edges
    let edges = this.storage[id1];
    // loop through each item in array to check if id2 is there
+   for(var i = 0; i < edges.length; i++){
+     if(edges[i] === id2){
+       edges.splice(i,1);
+       return true
+     }
+   }
+   return false
  }
 
  // Time Complexity: O(1)
