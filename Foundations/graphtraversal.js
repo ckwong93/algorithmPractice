@@ -70,7 +70,24 @@ const sampleGraph = deserialize(8, [[0, 1], [1, 2], [2, 4], [3, 5], [4, 5],
  */
 
 function bfs(vertex){
+  let result = [];
+  let queue = [];
+  let travelled = {};
+  let current;
+  queue.push(vertex.id);
+  result.push(current.id);
 
+  while(queue.length > 0){
+    current = queue.shift();
+    for(var i = 0; i < current.edges.length; i++){
+      if(!travelled[current.edges[i]]){
+        queue.push(current.edges[i]);
+        travelled[current.edges[i]] = true;
+      }
+    }
+    travelled[current] = true;
+  }
+  return result;
 }
 
 /**
