@@ -79,7 +79,15 @@ class Graph {
  // Time Complexity: O(1)
  // Auxiliary Space Complexity: O(1)
  addVertex(id) {
+   if(!id){ return false;}
+   if(this.storage[id]){
+     return false;
+   }
+   else{
+     this.storage[id] = [];
+     return true;
 
+   }
  }
 
  // Time Complexity: O(v+e)
@@ -91,28 +99,42 @@ class Graph {
  // Time Complexity: O(1), but if checking for dupes, O(e)
  // Auxiliary Space Complexity: O(1)
  addEdge(id1, id2) {
-
+   if(this.storage[id1] === undefined || this.storage[id2] === undefined){
+     return false;
+   } else{
+     if(this.storage[id1].indexOf(id2) < 0){
+       this.storage[id1].push(id2);
+       return true;
+     }
+   }
+   return false;
  }
 
  // Time Complexity: O(d) -> average number of edges per vertex
  // Auxiliary Space Complexity: O(1)
  // redo when home, this case only works if there is 1 item
  removeEdge(id1, id2) {
-
+   if(!this.storage[id1] || !this.storage[id2]){ return false; }
+   // edges will be an array of id1's edges
+   let edges = this.storage[id1];
+   
  }
 
  // Time Complexity: O(1)
  // Auxiliary Space Complexity: O(1)
  isVertex(id) {
-
+   if(this.storage[id]){
+     return true;
+   }
+   return false;
  }
 
  // Time Complexity: O(1)
  // Auxiliary Space Complexity: O(1)
  neighbors(id) {
 
+ }
 }
-
 
 ////////////////////////////////////////////////////////////
 ///////////////  DO NOT TOUCH TEST BELOW!!!  ///////////////
