@@ -120,6 +120,7 @@ class Graph {
    // loop through each item in array to check if id2 is there
    for(var i = 0; i < edges.length; i++){
      if(edges[i] === id2){
+   // if id2 is there, splice it from the original array of edges and return true
        edges.splice(i,1);
        return true
      }
