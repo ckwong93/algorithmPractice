@@ -94,14 +94,19 @@ class Graph {
  // Auxiliary Space Complexity: O(1)
  removeVertex(id) {
    if(!this.storage[id]){ return false;}
+   // before we can delete id from storage, we need to remove all edges associated with that id
+   // loop through all items in storage hash
    for(var vertex in this.storage){
+     // set edges to current edges for vertex in loop
      let edges = this.storage[vertex];
      for(var i = 0; i < edges.length; i++){
+       // check to see if id exists in edges arr, if it does - delete it using splice
        if(edges[i] === id){
          edges.splice(i,1);
        }
      }
    }
+   // delete the id complete from storage
    delete this.storage[id];
    return true
  }
