@@ -117,7 +117,7 @@ class Graph {
    if(!this.storage[id1] || !this.storage[id2]){ return false; }
    // edges will be an array of id1's edges
    let edges = this.storage[id1];
-   
+   // loop through each item in array to check if id2 is there
  }
 
  // Time Complexity: O(1)
