@@ -93,7 +93,17 @@ class Graph {
  // Time Complexity: O(v+e)
  // Auxiliary Space Complexity: O(1)
  removeVertex(id) {
-
+   if(!this.storage[id]){ return false;}
+   for(var vertex in this.storage){
+     let edges = this.storage[vertex];
+     for(var i = 0; i < edges.length; i++){
+       if(edges[i] === id){
+         edges.splice(i,1);
+       }
+     }
+   }
+   delete this.storage[id];
+   return true
  }
 
  // Time Complexity: O(1), but if checking for dupes, O(e)
@@ -294,9 +304,9 @@ assert(testCount, 'removes a vertex while safely removing edges connected to nod
  graph.addEdge(5, 15);
  graph.addEdge(10, 5);
  graph.addEdge(15, 10);
- console.log(graph.storage,'inital');
+ // console.log(graph.storage,'inital');
  let result = graph.removeVertex(5);
- console.log(graph.storage,'after removal');
+ // console.log(graph.storage,'after removal');
  return Object.keys(graph.storage).length === 2 &&
     graph.storage[10].length === 0 &&
     graph.storage[15].length === 1 &&
