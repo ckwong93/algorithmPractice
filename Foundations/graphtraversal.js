@@ -74,18 +74,22 @@ function bfs(vertex){
   let queue = [];
   let travelled = {};
   let current;
+  // add initial value to queue and result
   queue.push(vertex.id);
   result.push(current.id);
 
   while(queue.length > 0){
+    // remove first item in queue
     current = queue.shift();
+    // loop through current item's edges
     for(var i = 0; i < current.edges.length; i++){
+      // check if travelled already
       if(!travelled[current.edges[i]]){
+        // if not, add to queue, add to travelled
         queue.push(current.edges[i]);
         travelled[current.edges[i]] = true;
       }
     }
-    travelled[current] = true;
   }
   return result;
 }
