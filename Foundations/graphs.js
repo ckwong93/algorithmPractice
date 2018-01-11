@@ -140,7 +140,10 @@ class Graph {
  // Time Complexity: O(1)
  // Auxiliary Space Complexity: O(1)
  neighbors(id) {
-
+   if(!this.storage[id]){
+     return null;
+   }
+   return this.storage[id];
  }
 }
 
