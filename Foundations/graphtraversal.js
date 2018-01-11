@@ -77,7 +77,7 @@ function bfs(vertex){
   // add initial value to queue and result
   queue.push(vertex.id);
   result.push(current.id);
-
+  travelled[current.id] = true;
   while(queue.length > 0){
     // remove first item in queue
     current = queue.shift();
@@ -105,8 +105,31 @@ function bfs(vertex){
  *  HINT: Use a set or hash table to handle redundancy
  */
 
+// same as bfs, except use stack isntead of queue and pop instead of shift
 function dfs(vertex){
+  let result = [];
+  let stack = [];
+  let travelled = {};
+  let current;
+  // add initial value to stack and result
+  stack.push(vertex.id);
+  result.push(current.id);
+  travelled[current.id] = true;
 
+  while(stack.length > 0){
+    // remove first item in stack
+    current = stack.pop();
+    // loop through current item's edges
+    for(var i = 0; i < current.edges.length; i++){
+      // check if travelled already
+      if(!travelled[current.edges[i]]){
+        // if not, add to stack, add to travelled
+        stack.push(current.edges[i]);
+        travelled[current.edges[i]] = true;
+      }
+    }
+  }
+  return result;
 }
 
 
