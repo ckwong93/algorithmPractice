@@ -1,5 +1,7 @@
 // Eloquent Javascript - This feature—being able to reference a specific instance of local variables in an enclosing function—is called closure. A function that “closes over” some local variables is called a closure. This behavior not only frees you from having to worry about lifetimes of variables but also allows for some creative use of function values.
 
+// Techsith from youtube - "closures are nothing but functions with preserved variables"
+
 // closure - when a function within a function is called, it has access to its lexical scope - aka context variables needed for the inner function
 var multiplier = function(base){
   var factor = function(number){
