@@ -8,17 +8,37 @@ var addToThis = function(a,b,c){
 
 // javascript call lets us combine the num property of the object with the function and argument(3)
 // "attaches function to object temporarily and then runs it and gives result back as if it is a part of the object itself"
-console.log(addToThis.call(obj,1,2,3))
+console.log(addToThis.call(obj,1,2,3),'call')
 // output returns 8
 
 
 
 // javascript apply is similar - althought you don't need to pass in all the arguments separately. you can pass them in an array and it will Homework
 var arr = [1,2,3];
-console.log(addToThis.apply(obj,arr));
+console.log(addToThis.apply(obj,arr),'apply');
 // output returns 8
 
+// javascript bind - combines an object and allows you to use outside functions that were not previously associated with it
+var bound = addToThis.bind(obj);
+console.log(bound(1,2,3),'bind');
 
+
+
+
+// summary
+var obj = {num:2};
+var functionName = function(arg1,arg2,arg3){
+
+};
+
+// calls
+functionName.call(obj,arg1,arg2,arg3);
+// apply
+arr=[arg1,arg2,arg3]
+functionName.apply(obj,arr);
+// bind
+let bound = functionName.bind(obj);
+bound(arg1,arg2,arg3);
 
 
 
