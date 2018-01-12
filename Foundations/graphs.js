@@ -127,7 +127,6 @@ class Graph {
 
  // Time Complexity: O(d) -> average number of edges per vertex
  // Auxiliary Space Complexity: O(1)
- // redo when home, this case only works if there is 1 item
  removeEdge(id1, id2) {
    if(!this.storage[id1] || !this.storage[id2]){ return false; }
    // edges will be an array of id1's edges
