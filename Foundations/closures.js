@@ -1,6 +1,4 @@
 // closure - when a function within a function is called, it has access to its lexical scope - aka context variables needed for the inner function
-
-
 var multiplier = function(base){
   var factor = function(number){
     return base *= number
