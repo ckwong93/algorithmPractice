@@ -19,3 +19,10 @@ five(7)
 for (var i = 1; i <= 5; i++) {
     setTimeout(function() { console.log(i); }, 1000+i);
 }
+
+
+for (var i = 1; i <= 5; i++) {
+  (function(invoke){
+    setTimeout(function() { console.log(invoke); }, 1000);
+  })(i);
+}
