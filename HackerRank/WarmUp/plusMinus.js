@@ -27,3 +27,26 @@
 //
 // There are  positive numbers,  negative numbers, and  zero in the array.
 // The respective fractions of positive numbers, negative numbers and zeroes are ,  and , respectively.
+function plusMinus(arr) {
+    // Complete this function
+    let pos = 0;
+    let neg = 0;
+    let zero = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] > 0){
+            pos++;
+        } else if (arr[i] < 0){
+            neg++;
+        } else{
+            zero++;
+        }
+    }
+    pos = pos/arr.length;
+    neg = neg/arr.length;
+    zero = zero/arr.length;
+
+   console.log(pos);
+   console.log(neg);
+   console.log(zero);
+}
