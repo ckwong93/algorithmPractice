@@ -32,3 +32,18 @@
 // Explanation
 //
 // The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of .
+function staircase(n) {
+    // Complete this function
+    let arr = [];
+
+    for(var i = 0; i < n; i++){
+      arr[i] = " ";
+    }
+    // console.log(arr)
+
+    for(var j = n; j > 0; j--){
+      // console.log(string.charAt(j),'j',j);
+      arr[j-1] = "#"
+      console.log(arr.join(""));
+    }
+}
