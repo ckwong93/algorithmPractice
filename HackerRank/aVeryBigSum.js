@@ -22,3 +22,11 @@
 //
 // The range of the 32-bit integer is .
 // When we add several integer values, the resulting sum might exceed the above range. You might need to use long long int in C/C++ or long data type in Java to store such sums.
+function aVeryBigSum(n, ar) {
+    // Complete this function
+    let sum = 0;
+    for(var i = 0; i < ar.length; i++){
+        sum += ar[i]
+    }
+    return sum
+}
