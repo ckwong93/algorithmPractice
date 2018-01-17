@@ -35,3 +35,20 @@
 // 10
 // Sum across the secondary diagonal: 4 + 5 + 10 = 19
 // Difference: |4 - 19| = 15
+function diagonalDifference(a) {
+    // Complete this function
+    let dimensionsForward = a.length - 1;
+    let forwards = 0;
+    let backwards = 0;
+
+    for(var i = 0; i < a.length; i++){
+      // console.log(a[i,dimensionsForward],"a[i,dimensionsForward]")
+        forwards += a[i][dimensionsForward];
+        dimensionsForward--
+    }
+
+    for(var j = 0; j < a.length; j++){
+        backwards += a[j][j];
+    }
+    return Math.abs(forwards - backwards);
+}
