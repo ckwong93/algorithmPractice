@@ -34,3 +34,23 @@
 // As you can see, the minimal sum is  and the maximal sum is . Thus, we print these minimal and maximal sums as two space-separated integers on a new line.
 //
 // Hints: Beware of integer overflow! Use 64-bit Integer.
+
+
+function miniMaxSum(arr) {
+    // Complete this function
+    let sum = 0;
+    let max = 0;
+
+    for(var i = 0; i < arr.length; i++){
+      sum += arr[i];
+    }
+    let min = sum;
+
+    for(var j = 0; j < arr.length; j++){
+      let totalWithoutJ = sum - arr[j];
+      min = Math.min(totalWithoutJ,min);
+      max = Math.max(max, totalWithoutJ)
+    }
+    console.log(min, max);
+    // console.log(max);
+}
