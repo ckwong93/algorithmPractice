@@ -44,3 +44,23 @@
 // image
 //
 // She broke her best record four times (after games , , , and ) and her worst record zero times (no score during the season was lower than the one she earned during her first game), so we print 4 0 as our answer.
+
+
+function breakingRecords(score) {
+  let lowScore = score[0];
+  let highScore = score[0];
+  let lowCount = 0;
+  let highCount = 0;
+
+  for(var i = 1; i < score.length; i++){
+    if(score[i] < lowScore){
+      lowScore = score[i];
+      lowCount++;
+    }
+    else if(score[i] > highScore){
+      highScore = score[i];
+      highCount++;
+    }
+  }
+  return [highCount,lowCount];
+}
