@@ -58,3 +58,21 @@
 // Explanation 2
 //
 // Lily only wants to give Ron  square of chocolate with an integer value of . Because the only square of chocolate in the bar satisfies this constraint, we print  as our answer.
+function solve(n, s, d, m){
+    // Complete this function
+  let currSum;
+  let count = 0;
+  for(var i = 0; i < s.length; i++){
+    currSum = 0;
+    currSum += s[i];
+
+    for(var j = i + 1; j < m + i; j++){
+      currSum +=s[j];
+
+    }
+    if(currSum === d){
+      count++;
+    }
+  }
+  return count;
+}
