@@ -31,3 +31,26 @@
 // Type :  birds
 // Type :  bird
 // The type number that occurs at the highest frequency is type , so we print  as our answer.a
+function migratoryBirds(n, ar) {
+  // Complete this function
+  let log = {};
+  let count = 0;
+  let commonBird;
+
+  for(var i = 0; i < ar.length; i++){
+    if(log[ar[i]]){
+      log[ar[i]]++;
+    }
+    else{
+      log[ar[i]] = 1;
+    }
+  }
+
+  for(var items in log){
+    if(log[items] > count){
+      count = log[items];
+      commonBird = items;
+    }
+  }
+  return commonBird
+}
