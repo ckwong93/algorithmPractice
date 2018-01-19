@@ -42,6 +42,8 @@
 //
 // The second kangaroo has a starting location that is ahead (further to the right) of the first kangaroo's starting location (i.e., ). Because the second kangaroo moves at a faster rate (meaning ) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
 
+
+// function will add jump width each time and check if they are same. if true, return out 
 function kangaroo(x1, v1, x2, v2) {
     let k1start = parseInt(x1);
     let k2start = parseInt(x2);
