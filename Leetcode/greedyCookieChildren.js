@@ -20,3 +20,15 @@
 // Explanation: You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2.
 // You have 3 cookies and their sizes are big enough to gratify all of the children,
 // You need to output 2.
+var findContentChildren = function(g, s) {
+  let content = 0;
+  for(var i = 0; i < g.length; i++){
+    for(var j = 0; j < s.length; j++){
+      if(g[i] <= s[j]){
+        content++;
+        break;
+      }
+    }
+  }
+  return content;
+}
