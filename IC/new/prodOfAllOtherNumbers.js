@@ -27,7 +27,6 @@ function getProductsOfAllIntsExceptAtIndex(numbers){
     result[i] = forwards;
     forwards *= numbers[i]
   }
-
   for(var j = numbers.length - 1; j >= 0; j--){
     result[j] *= backwards;
     backwards *= numbers[j]

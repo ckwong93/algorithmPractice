@@ -29,7 +29,6 @@ function quickSort(numbers){
   if(numbers.length < 2){
     return numbers;
   }
-
   for(var i = 0; i < numbers.length; i++){
     if(i !== pivotIndex){
       if(numbers[i] < numbers[pivotIndex]){
