@@ -43,6 +43,37 @@ function quickSort(numbers){
   return quickSort(a).concat(numbers[pivotIndex]).concat(quickSort(b));
 }
 
-
 console.log(highestProdofThree([-7,4,3,6,-5]));
 console.log(highestProdofThree([-10,-10,1,3,2]));
+
+
+// IC SOLUTION
+// Time: O(n);
+// Space: O(1);
+function IC_highestProdofThree(numbers){
+  if(numbers.length < 3){
+    return 'not enough inputs'
+  }
+
+  let highest = Math.max(numbers[0],numbers[1]);
+  let lowest =  Math.min(numbers[0],numbers[1]);
+  let hp2 = numbers[0] * numbers[1];
+  let lp2 = numbers[0] * numbers[1];
+  let hp3 = numbers[0] * numbers[1] * numbers[2];
+  let currentNumber;
+
+  for(var i = 2; i < numbers.length; i++){
+    let currentNumber = numbers[i];
+
+    hp3 = Math.max(hp3, lp2 * currentNumber, hp2 * currentNumber);
+    hp2 = Math.max(hp2, highest * currentNumber, lowest * currentNumber);
+    lp2 = Math.min(lp2, highest * currentNumber, lowest * currentNumber);
+    highest = Math.max(highest, currentNumber);
+    lowest = Math.min(lowest, currentNumber)
+  }
+  return hp3
+}
+
+
+console.log(IC_highestProdofThree([-7,4,3,6,-5]));
+console.log(IC_highestProdofThree([-10,-10,1,3,2]));
