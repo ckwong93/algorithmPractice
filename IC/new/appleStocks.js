@@ -8,7 +8,8 @@
 // // returns 6 (buying for $5 and selling for $11)
 //
 
-
+// Time: O(n)
+// Space: O(1)
 function getMaxProfit(prices){
   let minPrice = prices[0];
   let maxProfit = prices[1] - prices[0];

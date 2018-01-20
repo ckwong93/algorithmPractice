@@ -16,6 +16,8 @@
 //
 // Do not use division in your solution.
 
+// Time: O(n)
+// Space: O(n)
 function getProductsOfAllIntsExceptAtIndex(numbers){
   let forwards = 1;
   let backwards = 1;
