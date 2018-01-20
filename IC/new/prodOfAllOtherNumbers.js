@@ -15,3 +15,22 @@
 //   [7 * 3 * 4,  1 * 3 * 4,  1 * 7 * 4,  1 * 7 * 3]
 //
 // Do not use division in your solution.
+
+function getProductsOfAllIntsExceptAtIndex(numbers){
+  let forwards = 1;
+  let backwards = 1;
+  let result = [];
+
+  for(var i = 0; i < numbers.length; i++){
+    result[i] = forwards;
+    forwards *= numbers[i]
+  }
+
+  for(var j = numbers.length - 1; j >= 0; j--){
+    result[j] *= backwards;
+    backwards *= numbers[j]
+  }
+  return result
+}
+
+console.log(getProductsOfAllIntsExceptAtIndex([1,7,3,4]))
