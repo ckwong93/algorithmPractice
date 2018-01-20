@@ -54,17 +54,22 @@ function IC_highestProdofThree(numbers){
   if(numbers.length < 3){
     return 'not enough inputs'
   }
-
+  // save highest of first 2 inputs
   let highest = Math.max(numbers[0],numbers[1]);
+  // save lowest of first 2 inputs
   let lowest =  Math.min(numbers[0],numbers[1]);
+  // init calc of hp2 as first two inputs
   let hp2 = numbers[0] * numbers[1];
+  // init calc of lp2 as first two inputs
   let lp2 = numbers[0] * numbers[1];
+  // init calc of hp3 as first three inputs
   let hp3 = numbers[0] * numbers[1] * numbers[2];
+  // current item in index
   let currentNumber;
 
   for(var i = 2; i < numbers.length; i++){
     let currentNumber = numbers[i];
-
+    // calc hp3 first with current then move downwards with the other variables
     hp3 = Math.max(hp3, lp2 * currentNumber, hp2 * currentNumber);
     hp2 = Math.max(hp2, highest * currentNumber, lowest * currentNumber);
     lp2 = Math.min(lp2, highest * currentNumber, lowest * currentNumber);
