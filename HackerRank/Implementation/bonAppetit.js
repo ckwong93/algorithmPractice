@@ -31,7 +31,6 @@
 // 3 10 2 9
 // 7
 // Sample Output 1
-
 // Bon Appetit
 // Explanation 1
 // Anna didn't eat item , but she shared the rest of the items with Brian. The total cost of the shared items is  and, split in half, the cost per person is . Because this matches the amount, , that Brian charged Anna for her portion of the bill, we print Bon Appetit on a new line.
@@ -40,5 +39,19 @@
 
 function bonAppetit(n, k, b, ar) {
     // Complete this function
-    
+    let sum = 0;
+    for (var i = 0; i < ar.length; i++) {
+        if (i !== k) {
+            sum += ar[i];
+        }
+    }
+    if (sum / (2) === b) {
+        return 'Bon Appetit'
+    }
+    else {
+        return (ar[k] / 2)
+    }
 }
+
+console.log(bonAppetit(4, 1, 12, [3, 10, 2, 9]))
+console.log(bonAppetit(4, 1, 7, [3, 10, 2, 9]))
