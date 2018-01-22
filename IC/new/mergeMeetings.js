@@ -5,7 +5,7 @@ function mergeMeetings(times) {
     let sorted = times.sort(function (a, b) {
         return a.startTime - b.startTime
     });
-
+    // console.log(sorted);
     merged.push(sorted[0]);
 
 
