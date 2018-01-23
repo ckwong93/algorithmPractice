@@ -21,3 +21,22 @@
 
 // 3
 
+function sockMerchant(n, ar) {
+    // Complete this function
+    let count = 0;
+    let map = {};
+
+    for (var i = 0; i < ar.length; i++) {
+        if (map[ar[i]]) {
+            map[ar[i]]++
+        }
+        else {
+            map[ar[i]] = 1;
+        }
+    }
+
+    for (var socks in map) {
+        count += Math.floor(map[socks] / 2);
+    }
+    return count;
+}
