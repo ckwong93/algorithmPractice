@@ -3,6 +3,9 @@
 
 // memoization is often used with recursion - storing saved calls into a hashmap lets you retrieve them quickly and thus speed up the time complexity by a wide margin
 
+
+
+// -------------MEMOIZATION-------------
 // ex 1: Dynamic Programming (memoization) with the Fibonacci Sequence
 
 // non-DP solution
@@ -90,3 +93,17 @@ function latticePathsDP(n){
 // latticePathsDP(5) -> 252
 // console.log(latticePathsDP(2));
 // console.log(latticePathsDP(5));
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -------------TABULATION-------------
