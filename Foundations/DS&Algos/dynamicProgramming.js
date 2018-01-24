@@ -110,9 +110,20 @@ function latticePathsDP(n){
 
 // ex 1: Coin Change Problem using Tabulation
 function coinChange(amount,denominations){
-    let ways = Array.fill(0);
+    let ways = [];
+    for(var i = 0; i <= amount; i++){
+        ways[i] = 0;
+    }
     ways[0] = 1;
-    console.log(ways);
+
+    denominations.forEach(function(coin){
+        for(var j = coin; j < amount; j++){
+            let remainder = j - coin;
+            ways[j] += ways[remainder];
+        }
+    })
+
+    return ways[amount];
 }
 
 console.log(coinChange(10,[1,2,3]))
