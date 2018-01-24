@@ -117,7 +117,7 @@ function coinChange(amount,denominations){
     ways[0] = 1;
 
     denominations.forEach(function(coin){
-        for(var j = coin; j < amount; j++){
+        for(var j = coin; j <= amount; j++){
             let remainder = j - coin;
             ways[j] += ways[remainder];
         }
@@ -127,3 +127,30 @@ function coinChange(amount,denominations){
 }
 
 console.log(coinChange(10,[1,2,3]))
+
+// Explanation: we are using tabulation to keep track of how many ways we can make a certain coin. for example, ways to make 10 cents will include ways to make 10 cents with 1cent increments as well as 2 cent increments
+
+// everytime we calculate, the formula is:
+// remainder = j - coin;
+// ways[j] += ways[remainder]
+
+// if j = 4, coin = 3
+// remainder = 4 - 3 = 1;
+// ways[4] += ways[1]
+// goes from 3 -> 4 after calculation
+
+// now j = 5, coin = 3
+// remainder = 5 - 3 = 2;
+// ways[5] += ways[2]
+// goes from 3 -> 5 after calculation
+
+// now j = 6, coin = 3
+// remainder = 6 - 3 = 3
+// ways[6] += ways[3];
+// goes from 4 -> 6 after calculation
+
+//   0 1 2 3 4 5 6 7 8 9 10
+// 0 1 0 0 0 0 0 0 0 0 0 0 
+// 1 1 1 1 1 1 1 1 1 1 1 1
+// 2 1 1 2 2 3 3 4 4 5 5 6
+// 3 1 1 2 3 4 5 6 8 10 11 14
