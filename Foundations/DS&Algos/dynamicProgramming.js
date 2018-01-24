@@ -17,8 +17,8 @@ function fibonacci(n){
 
 // fibonacci(5) -> 5
 // fibonacci(55) -> 139583862445
-console.log(fibonacci(5));
-console.log(fibonacci(55));
+// console.log(fibonacci(5));
+// console.log(fibonacci(55));
 
 // DP solution using memoization
 function fibonacciDP(n){
