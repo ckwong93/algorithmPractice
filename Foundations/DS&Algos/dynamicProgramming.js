@@ -88,5 +88,5 @@ function latticePathsDP(n){
 
 // latticePathsDP(2) -> 6
 // latticePathsDP(5) -> 252
-console.log(latticePathsDP(2));
-console.log(latticePathsDP(5));
+// console.log(latticePathsDP(2));
+// console.log(latticePathsDP(5));
