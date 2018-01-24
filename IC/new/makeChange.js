@@ -43,4 +43,5 @@ function makeChange(amount, denominations){
     return ways[amount]
 }
 
-console.log(makeChange(4,[1,2,3]));
+// console.log(makeChange(4,[1,2,3]));
+console.log(makeChange(10, [2, 3, 5]));
