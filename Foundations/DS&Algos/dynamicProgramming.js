@@ -48,3 +48,20 @@ function fibonacciDP(n){
 
 // ex 2: Dynamic Programming (memoization) with Lattice Paths
 
+// non-DP solution
+function latticePaths(n){
+    let count = 0;
+    function traverse(x,y){
+        if(x == n && y == n){
+            count++;
+            return;
+        } else if(x > n || y > n){
+            return;
+        }
+        traverse(x+1,y);
+        traverse(x,y+1);
+    }
+    traverse(0,0);
+    return count;
+}
+
