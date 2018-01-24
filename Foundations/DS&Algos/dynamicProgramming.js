@@ -66,5 +66,27 @@ function latticePaths(n){
 }
 // latticePaths(2) -> 6
 // latticePaths(5) -> 252
-console.log(latticePaths(2));
-console.log(latticePaths(5));
+// console.log(latticePaths(2));
+// console.log(latticePaths(5));
+
+// DP solution using memoization
+function latticePathsDP(n){
+    let memo = {};
+    function traverse(x,y){
+        if(memo[x + ',' + 'y']){
+            return memo[x + ',' + y];
+        } else if(x === n || y === n){
+            return 1;
+        } else if(x > n || y > n){
+            return 0;
+        }
+        memo[x + ',' + y] = traverse(x + 1,y) + traverse(x, y+1);
+        return memo[x + ',' + y]
+    }
+    return traverse(0,0)
+}
+
+// latticePathsDP(2) -> 6
+// latticePathsDP(5) -> 252
+console.log(latticePathsDP(2));
+console.log(latticePathsDP(5));
