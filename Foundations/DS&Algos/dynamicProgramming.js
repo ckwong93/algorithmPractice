@@ -16,12 +16,12 @@ function fibonacci(n){
 }
 
 // fibonacci(5) -> 5
-// fibonacci(10) -> 55
-// console.log(fibonacci(5));
-// console.log(fibonacci(10));
+// fibonacci(55) -> 139583862445
+console.log(fibonacci(5));
+console.log(fibonacci(55));
 
 // DP solution using memoization
-function fibonacci(n){
+function fibonacciDP(n){
     let memo = {};
     function fib(n){
         if(memo[n]){
@@ -38,5 +38,7 @@ function fibonacci(n){
     return fib(n)
 }
 
-console.log(fibonacci(5));
-console.log(fibonacci(10));
+// fibonacci(5) -> 5
+// fibonacci(55) -> 139583862445
+console.log(fibonacciDP(5));
+console.log(fibonacciDP(55));
