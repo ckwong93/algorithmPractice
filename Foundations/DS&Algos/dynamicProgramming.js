@@ -114,3 +114,5 @@ function coinChange(amount,denominations){
     ways[0] = 1;
     console.log(ways);
 }
+
+console.log(coinChange(10,[1,2,3]))
