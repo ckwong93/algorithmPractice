@@ -40,5 +40,11 @@ function fibonacciDP(n){
 
 // fibonacci(5) -> 5
 // fibonacci(55) -> 139583862445
-console.log(fibonacciDP(5));
-console.log(fibonacciDP(55));
+// console.log(fibonacciDP(5));
+// console.log(fibonacciDP(55));
+
+
+
+
+// ex 2: Dynamic Programming (memoization) with Lattice Paths
+
