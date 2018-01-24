@@ -2,7 +2,7 @@
 // there are two types of dynamic programming - memoization and tabulation. 
 
 // memoization is often used with recursion - storing saved calls into a hashmap lets you retrieve them quickly and thus speed up the time complexity by a wide margin
-
+// for tabulation, we often use an array or matrix to keep track of values, updating for next iterations. essentially, we are adding all applicable examples each iteration
 
 
 // -------------MEMOIZATION-------------
@@ -107,3 +107,10 @@ function latticePathsDP(n){
 
 
 // -------------TABULATION-------------
+
+// ex 1: Coin Change Problem using Tabulation
+function coinChange(amount,denominations){
+    let ways = Array.fill(0);
+    ways[0] = 1;
+    console.log(ways);
+}
