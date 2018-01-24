@@ -64,4 +64,7 @@ function latticePaths(n){
     traverse(0,0);
     return count;
 }
-
+// latticePaths(2) -> 6
+// latticePaths(5) -> 252
+console.log(latticePaths(2));
+console.log(latticePaths(5));
