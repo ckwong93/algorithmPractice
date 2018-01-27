@@ -76,3 +76,4 @@ function solve(n, s, d, m){
   }
   return count;
 }
+// hackerrank birthday chocolate algo
