@@ -31,3 +31,25 @@
 
 // The characters of hackerrank are bolded in the string above.Because the string contains all the characters in hackerrank in the same exact order as they appear in hackerrank, we print YES on a new line.
 // does not contain the last three characters of hackerrank, so we print NO on a new line.
+
+
+function hackerrankInString(s) {
+    // Complete this function
+    let verify = 'hackerrank';
+    let vIndex = 0;
+
+    for (var i = 0; i < s.length; i++) {
+        if (s.charAt(i) === verify.charAt(vIndex)) {
+            vIndex++
+        }
+    }
+    // console.log(vIndex)
+    if (vIndex === verify.length) {
+        return 'YES'
+    } else {
+        return 'NO';
+    }
+}
+
+console.log(hackerrankInString('hereiamstackerrank'));
+console.log(hackerrankInString('hackerworld'))
