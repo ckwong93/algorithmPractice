@@ -29,3 +29,34 @@
 
 // Only "a" and "b" are the two kinds of gem - elements, since these are the only characters that occur in every rock's composition.
 
+
+function gemstones(arr) {
+    // Complete this function
+    let letterCount = {};
+    let gems = 0;
+    arr.forEach(function (item) {
+        let letter = ""
+        for (var i = 0; i < item.length; i++) {
+            if (letter.indexOf(item[i]) < 0) {
+                letter += item[i];
+            }
+        }
+        for (var j = 0; j < letter.length; j++) {
+            if (letterCount[letter[j]]) {
+                letterCount[letter[j]]++
+            }
+            else {
+                letterCount[letter[j]] = 1;
+            }
+        }
+    })
+
+    for (var entries in letterCount) {
+        if (letterCount[entries] === arr.length) {
+            gems++;
+        }
+    }
+    return gems;
+}
+
+console.log(gemstones(['abcdde', 'baccd', 'eeabg']))
