@@ -48,3 +48,30 @@
 
 // A palindrome permutation of the given string is ddcceefeeccdd.
 
+
+function gameOfThrones(s) {
+    // Complete this function
+    let letters = {};
+    let oddCount = 0;
+    for (var i = 0; i < s.length; i++) {
+        if (letters[s[i]]) {
+            letters[s[i]]++;
+        }
+        else {
+            letters[s[i]] = 1;
+        }
+    }
+    for (var items in letters) {
+        if (letters[items] % 2 !== 0) {
+            oddCount++;
+        }
+    }
+    if (oddCount > 1) {
+        return 'NO';
+    }
+    return 'YES'
+}
+
+console.log(gameOfThrones('aaabbbb'));
+console.log(gameOfThrones('cdefghmnopqrstuvw'));
+console.log(gameOfThrones('cdcdcdcdeeeef'))
