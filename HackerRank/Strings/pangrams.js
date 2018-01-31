@@ -53,5 +53,5 @@ function pangram(string) {
 }
 
 console.log(pangram('We promptly judged antique ivory buckles for the next prize'));
-console.log(pangram('We promptly judged antique ivory buckles for the prize'));
+// console.log(pangram('We promptly judged antique ivory buckles for the prize'));
 
