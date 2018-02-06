@@ -34,3 +34,49 @@
 // Remove d and e from cde to get c.
 // Remove a and b from abc to get c.
 // We had to delete characters to make both strings anagrams, so we print  on a new line
+
+function makingAnagrams(s1, s2) {
+    // Complete this function
+    let s1Letters = {};
+    let s2Letters = {};
+    let removed = 0;
+
+    for (var i = 0; i < s1.length; i++) {
+        if (s1Letters[s1[i]]) {
+            s1Letters[s1[i]]++;
+        } else {
+            s1Letters[s1[i]] = 1;
+        }
+    }
+    for (var j = 0; j < s2.length; j++) {
+        if (s2Letters[s2[j]]) {
+            s2Letters[s2[j]]++;
+        } else {
+            s2Letters[s2[j]] = 1;
+        }
+    }
+
+    //   console.log(s1Letters);
+    //   console.log(s2Letters);
+
+    for (var lettersA in s1Letters) {
+        if (s1Letters[lettersA] && s2Letters[lettersA]) {
+            removed += Math.abs(s1Letters[lettersA] - s2Letters[lettersA]);
+            s1Letters[lettersA] = 0;
+            s2Letters[lettersA] = 0
+        }
+        else if (s1Letters[lettersA] && !s2Letters[lettersA]) {
+            removed += s1Letters[lettersA];
+        }
+    }
+
+    for (var lettersB in s2Letters) {
+        if (s1Letters[lettersB] && s2Letters[lettersB]) {
+            removed += Math.abs(s1Letters[lettersB] - s2Letters[lettersB]);
+        }
+        else if (s2Letters[lettersB] && !s1Letters[lettersB]) {
+            removed += s2Letters[lettersB];
+        }
+    }
+    return removed;
+}
