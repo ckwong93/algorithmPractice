@@ -67,3 +67,4 @@ function twoStrings(s1, s2) {
     }
     return 'NO'
 }
+console.log(twoStrings('hello','hola'));
