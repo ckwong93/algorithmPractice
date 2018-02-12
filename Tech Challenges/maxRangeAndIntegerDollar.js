@@ -71,8 +71,8 @@ function numberConverter(num) {
     }
 }
 
-console.log(numberConverter(3));
-console.log(numberConverter(466));
-console.log(numberConverter(1234));
+// console.log(numberConverter(3));
+// console.log(numberConverter(466));
+// console.log(numberConverter(1234));
 console.log(numberConverter(10));
 console.log(numberConverter(21));
