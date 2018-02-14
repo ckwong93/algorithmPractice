@@ -14,3 +14,9 @@
 // -adding and retreiving items from DB
 // -processing data from or to the database/
 // -speaks only with the controller. DOES NOT SPEAK TO VIEWS
+
+// View
+// -what users see (frontend)
+// -think of HTML/CSS
+// -speaks only with controller
+
