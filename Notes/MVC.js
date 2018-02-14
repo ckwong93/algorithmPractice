@@ -20,3 +20,11 @@
 // -think of HTML/CSS
 // -speaks only with controller
 
+// Controller
+// -proccesses GET/POST/PUT/DELETE requests
+// -all server side logic
+// -the middle man
+        // -takes info from user
+        // -processes info and talks to the DB if needed
+        // -receives info from DB
+        // -speaks to view to explain presentation to the viewer
