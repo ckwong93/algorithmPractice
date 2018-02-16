@@ -1,1 +1,31 @@
 // Javascript Promises
+
+// A Promise is an object representing the eventual completion or failure of an asynchronous operation. Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a funcion
+
+
+// TechSith Example:
+let cleanRoom = function(){
+    return new Promise(function(resolve,reject){
+        resolve('I cleaned the room,');
+    });
+};
+
+let doGarbage = function(result){
+    return new Promise(function(resolve,reject){
+        resolve(result + ' tossed the garbage,');
+    });
+};
+
+let wonIceCream = function(result){
+    return new Promise(function(resolve,reject){
+        resolve(result + ' and won ice cream');
+    });
+};
+
+cleanRoom().then(function(message){
+    return doGarbage(message)
+}).then(function(message){
+    return wonIceCream(message)
+}).then(function(message){
+    console.log(message + ' - all complete!')
+})
