@@ -32,14 +32,28 @@ cleanRoom().then(function(message){
 
 
 //NetNinja jQuery example
-$.get("data/tweets.json").then(function(tweets){
-    console.log(tweets);
-    return $.get("data/friends.json");
-}).then(function(friends){
-    console.log(friends);
-    return $.get("data/videos.json");
-}).then(function(videos){
-    console.log(videos);
-    console.log('all done!')
-})
+// $.get("data/tweets.json").then(function(tweets){
+//     console.log(tweets);
+//     return $.get("data/friends.json");
+// }).then(function(friends){
+//     console.log(friends);
+//     return $.get("data/videos.json");
+// }).then(function(videos){
+//     console.log(videos);
+//     console.log('all done!')
+// })
 
+// Creating a Promise around an old callback API (Mozilla Docs)
+let wait = function(ms){
+    return new Promise(function(resolve){
+        return setTimeout(resolve,ms)
+    });
+};
+
+wait(1000).then(function(){
+    console.log("1 second passed")
+}).then(function(){
+    return wait(1000)
+}).then(function(){
+    console.log("another second passed");
+})
