@@ -9,3 +9,31 @@
 // Inside a function marked as async, you are allowed to place the await keyword in front of an expression that returns a Promise. when you do, the execution of the async funciton is paused until the promise is resolved
 
 // funfunfunction example
+
+// using promises
+const fetch = require('node-fetch');
+
+function fetchCatAvatars(userId){
+    return fetch(`https://catappapi.herokuapp.com/users/${userID}`)
+    .then(function(response){
+        return response.json()
+    .then(function(user){
+        const promises = user.cats.map(function(catID){
+            fetch(`https://catappapi.herokuapp.com/cats/${catID}`)
+                .then(function(response){
+                    return response.json()
+                })
+                .then(function(catData){
+                    return catData.imageUrl
+                })
+        })
+        return Promise.all(promises)
+    })
+    })
+}
+
+const result = fetchCatAvatars(123)
+// result equals ['httpimage1,httpimage2,httpimage3']
+
+
+// async-await version of same code
