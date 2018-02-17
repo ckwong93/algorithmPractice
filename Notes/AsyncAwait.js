@@ -37,3 +37,14 @@ const result = fetchCatAvatars(123)
 
 
 // async-await version of same code
+function async fetchCatAvatarsAsyncAwait(){
+    const response = await fetch(`https://catappapi.herokuapp.com/users/${userID}`);
+    const user = await response.json();
+    const catImageUrls = [];
+
+    for(const catId of user.cats){
+        const response = await fetch(`https://catappapi.herokuapp.com/cats/${catID}`);
+        const catData = await response.json();
+        catImageUrls.push(catData.imageUrl)
+    }
+}
