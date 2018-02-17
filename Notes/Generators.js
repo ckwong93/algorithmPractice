@@ -28,3 +28,21 @@ function* gen2(){
     yield 'ball'
 }
 
+// inits newGen2 as instance of gen2 generator
+let newGen2 = gen2();
+
+// runs up to first yield. in this format, car is saved into an object - {value: 'car', done: false}
+console.log(newGen2.next());
+
+// we can also pull off value from the object itself - results in 'toy' because .next is run during this operation
+// console.log(newGen2.next().value);
+
+// runs up to second yield.in this format, car is saved into an object - { value: 'toy', done: false }
+console.log(newGen2.next());
+
+// runs up to third yield.in this format, car is saved into an object - { value: 'ball', done: false }
+console.log(newGen2.next());
+
+// runs after third yield. since there is nothing left, we have an object with undefined value and done - true { value: undefined, done: true}
+console.log(newGen2.next());
+
