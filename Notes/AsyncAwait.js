@@ -36,7 +36,7 @@ const result = fetchCatAvatars(123)
 // result equals ['httpimage1,httpimage2,httpimage3']
 
 
-// async-await version of same code
+// async-await version of same code ->this is slower than promise version because it does one at a time, whereas promise version does all at once
 function async fetchCatAvatarsAsyncAwait(){
     const response = await fetch(`https://catappapi.herokuapp.com/users/${userID}`);
     const user = await response.json();
@@ -47,4 +47,17 @@ function async fetchCatAvatarsAsyncAwait(){
         const catData = await response.json();
         catImageUrls.push(catData.imageUrl)
     }
+}
+
+
+// best of both worlds scenario that captures promises + async await
+async function fetchCatAvatarsBest(userId){
+    const response = await fetch(`https://catappapi.herokuapp.com/users/${userID}`);
+    const user = await response.json();
+
+    return await Promise.all(user.cats.map(async function(catId){
+        const response = await fetch(`https://catappapi.herokuapp.com/cats/${catID}`);
+        const catData = await response.json();
+        return catData.imageUrl
+    }))
 }
