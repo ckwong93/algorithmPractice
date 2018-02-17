@@ -53,6 +53,25 @@ function* gen3(){
     let x = yield 'house';
     let y = yield 'apartment';
     let z = yield 'hut';
+    console.log('house price', x) ;
+    console.log('apartment price', y);
+    console.log('hut price', z);    
 }
 
+// creates new instance of gen3
 let newGen3 = gen3();
+
+// runs up to first yield - object is { value: 'house', done: false}
+console.log(newGen3.next());
+
+// saves value of x as 1000000 & runs up to second yield - object is { value: 'apartment', done: false}
+console.log(newGen3.next(1000000));
+
+// saves value of y as 500000 & runs up to third yield - object is { value: 'hut', done: false}
+console.log(newGen3.next(500000));
+
+// saves value of z as 5, logs to console price and variable. then returns object with value undefined and done - true { value: undefined, done: true}
+console.log(newGen3.next(5));
+
+
+
