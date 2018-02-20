@@ -61,3 +61,38 @@ async function fetchCatAvatarsBest(userId){
         return catData.imageUrl
     }))
 }
+
+// callback method
+$(document).ready(function () {
+    $('#button').click(cb)
+    function cb() {
+        $.get('https://catappapi.herokuapp.com/users/123', function (result) {
+            let catIds = result.cats;
+            catIds.forEach(function (cat) {
+                $.get('https://catappapi.herokuapp.com/cats/' + cat, function (data) {
+                    $('#test').prepend(`<img src="${data.imageUrl}">`);
+                    $('#table').append(`<li>${data.name}</li>`)
+                })
+            })
+        })
+    }
+})
+
+// promise method
+$(document).ready(function () {
+    $('#button').click(cb);
+
+    function cb(){
+        $.get('https://catappapi.herokuapp.com/users/123')
+        .then(function(result){
+            let catIds = result.cats;
+            catIds.forEach(function (cat){
+                $.get('https://catappapi.herokuapp.com/cats/' + cat)
+                .then(function (data){
+                    $('#test').prepend(`<img src="${data.imageUrl}">`);
+                    $('#table').append(`<li>${data.name}</li>`)
+                })
+            })
+        })
+    }
+})
