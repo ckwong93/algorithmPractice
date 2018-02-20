@@ -96,3 +96,30 @@ $(document).ready(function () {
         })
     }
 })
+
+
+// ajax callback function
+$(document).ready(function () {
+    
+    $('#button').click(cb);
+    
+    function cb(){
+        $.ajax({
+            type: 'GET',
+            url: 'https://catappapi.herokuapp.com/users/123',
+            success: function (result) {
+                console.log(result.cats, 'result cats');
+                result.cats.map(function (userCat) {
+                    $.ajax({
+                        type: 'GET',
+                        url: `https://catappapi.herokuapp.com/cats/${userCat}`,
+                        success: function (data) {
+                            console.log(data, 'data');
+                            $('#test').append(`<li>${data.name}</li>`)
+                        }
+                    })
+                })
+            }
+        })
+    }
+})
