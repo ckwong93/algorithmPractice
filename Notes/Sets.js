@@ -23,6 +23,11 @@ console.log(test.has('first'), 'has first?');
 console.log(test.has('second'), 'has second?')
 // output -true
 
+// checks size of set
+console.log(test.size,'size')
+
+
+
 // converting an array with dupes to a set
 let testArray = ['a','b','c','d','e','f','f','e','d','c','b','a'];
 let testSet = new Set(testArray);
