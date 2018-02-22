@@ -72,3 +72,8 @@ iterativeSet.add('a').add('b').add('c').add('d');
 // }
 // output = a b c d
 
+// iterating through set using forEach
+// iterativeSet.forEach(function (item) {
+//     console.log(item)
+// })
+// output = a b c d
