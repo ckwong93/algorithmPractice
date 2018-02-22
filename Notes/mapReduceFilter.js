@@ -35,4 +35,12 @@ let animals = [
     { name: 'Jimmy', species: 'fish' }
 ]
 
-// filter example
+// filter example - filter to retrieve only dogs
+let dogs = animals.filter(function(animal){
+    return animal.species === 'dog'
+})
+console.log(dogs);
+// output = [{ name: 'Caro', species: 'dog' },
+// { name: 'Hamilton', species: 'dog' }]
+
+// map example
