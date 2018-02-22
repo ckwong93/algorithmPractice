@@ -77,3 +77,44 @@ iterativeSet.add('a').add('b').add('c').add('d');
 //     console.log(item)
 // })
 // output = a b c d
+
+
+
+// Implementing a set using objects
+// implementing a set using Object
+class SetExample {
+    constructor(items = 0) {
+        this.values = {};
+        this.size = 0;
+    }
+
+    add(item) {
+        if (!this.values[item]) {
+            this.values[item] = true;
+            this.size++;
+        }
+    }
+
+    delete(item) {
+        if (this.values[item]) {
+            delete this.values[item];
+            this.size--;
+        }
+    }
+
+    has(item) {
+        if (this.values[item]) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+let test = new SetExample();
+test.add(5);
+test.has(5)
+test.add(10)
+// console.log(test)
+// test.delete(5)
+// console.log(test)
