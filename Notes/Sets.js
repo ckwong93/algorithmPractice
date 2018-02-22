@@ -22,3 +22,10 @@ let testArray = ['a','b','c','d','e','f','f','e','d','c','b','a'];
 let testSet = new Set(testArray);
 console.log(testSet);
 // output = Set { 'a', 'b', 'c', 'd', 'e', 'f' }
+
+// converting a set to an array
+let setItems = new Set();
+setItems.add('a').add('b').add('c').add('d');
+let convertedToArr = [...setItems];
+console.log(convertedToArr);
+// output ['a', 'b', 'c', 'd']
