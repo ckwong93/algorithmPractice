@@ -21,8 +21,8 @@ console.log(numbers.filter(function(item){
 
 // Reduce - for each item in the array, perform an action in the callback function that will accumulate based on second provided input value 
 console.log(numbers.reduce(function(item,result){
-    return result += item;
-}))
+    return item += result;
+},0))
 
 
 // funfunfunction examples
@@ -48,3 +48,22 @@ let animalDescriptions = animals.map(function(animal){
     return animal.name + ' is a ' + animal.species;
 })
 console.log(animalDescriptions);
+
+// reduce example - add up totals from orders obj
+let orders = [
+    {amount: 250},
+    {amount: 400},
+    {amount: 100},
+    {amount: 325}
+]
+let totalPrice = orders.reduce(function(total,order){
+    return total + order.amount
+},0)
+console.log(totalPrice)
+
+// reduce example - flattening nested arrays
+let nestOfDoom = [[1,2],[3,4,],[5,6]];
+let clean = nestOfDoom.reduce(function(filtered,doom){
+    return filtered.concat(doom);
+},[])
+console.log(clean)
