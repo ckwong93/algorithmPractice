@@ -11,6 +11,23 @@ test.add('first')
 console.log(test)
 // ouput = Set { 'first', 'second', 'third', 'fourth' }
 
+// adding reference to objects - it can store a reference to an object. if that object changes, the value of the object within the set will change as well
+// var mySet = new Set();
+
+// mySet.add(1); // Set [ 1 ]
+// mySet.add(5); // Set [ 1, 5 ]
+// mySet.add(5); // Set [ 1, 5 ]
+// mySet.add('some text'); // Set [ 1, 5, 'some text' ]
+// var o = { a: 1, b: 2 };
+// mySet.add(o);
+
+
+// console.log(o);
+// console.log(mySet);
+// o.a = 5;
+// console.log(o.a);
+// console.log(mySet)
+
 // removing values
 test.delete('first');
 console.log(test);
@@ -26,8 +43,6 @@ console.log(test.has('second'), 'has second?')
 // checks size of set
 console.log(test.size,'size')
 
-
-
 // converting an array with dupes to a set
 let testArray = ['a','b','c','d','e','f','f','e','d','c','b','a'];
 let testSet = new Set(testArray);
@@ -41,3 +56,4 @@ let convertedToArr = [...setItems];
 console.log(convertedToArr);
 // output ['a', 'b', 'c', 'd']
 
+ 
