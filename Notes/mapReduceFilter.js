@@ -43,4 +43,8 @@ console.log(dogs);
 // output = [{ name: 'Caro', species: 'dog' },
 // { name: 'Hamilton', species: 'dog' }]
 
-// map example
+// map example - map through items and provide name with species
+let animalDescriptions = animals.map(function(animal){
+    return animal.name + ' is a ' + animal.species;
+})
+console.log(animalDescriptions);
