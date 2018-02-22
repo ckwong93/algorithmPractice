@@ -102,7 +102,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     
     $('#button').click(cb);
-    
+
     function cb(){
         $.ajax({
             type: 'GET',
@@ -121,5 +121,27 @@ $(document).ready(function () {
                 })
             }
         })
+    }
+})
+
+// https://catappapi.herokuapp.com/users/123
+// `https://catappapi.herokuapp.com/cats/${userCat}`
+
+
+$(document).ready(function(){
+
+    $('#button').click(cb);
+    
+    function cb(){
+        $.get('https://catappapi.herokuapp.com/users/123')
+            .then(function (response) {
+                console.log(response.cats, 'user cats');
+                response.cats.map(function (catID) {
+                    $.get(`https://catappapi.herokuapp.com/cats/${catID}`)
+                        .then(function (data) {
+                            $('#test').append(`<li>${data.name}</li>`)
+                        })
+                })
+            })
     }
 })
