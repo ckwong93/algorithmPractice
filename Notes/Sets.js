@@ -17,3 +17,8 @@ console.log(test);
 // output = Set { 'second', 'third', 'fourth' }
 // ** chaining delete methods does not work - if you console.log(test.delete('first')), it will return a boolean (t/f)
 
+// converting an array with dupes to a set
+let testArray = ['a','b','c','d','e','f','f','e','d','c','b','a'];
+let testSet = new Set(testArray);
+console.log(testSet);
+// output = Set { 'a', 'b', 'c', 'd', 'e', 'f' }
