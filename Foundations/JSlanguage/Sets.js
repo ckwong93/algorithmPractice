@@ -128,5 +128,5 @@ class SetExample {
 // test.add(10)
 // console.log(test)
 // test.delete(5)
-console.log(test)
+// console.log(test)
 
