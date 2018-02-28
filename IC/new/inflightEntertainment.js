@@ -9,3 +9,18 @@
 //     Assume your users will watch exactly two movies
 // Don't make your users watch the same movie twice
 // Optimize for runtime over memory
+
+function inflight(flightTime,movieTimes){
+    let store = {};
+    for(var i = 0; i < movieTimes.length; i++){
+        if(store[flightTime - movieTimes[i]]){
+            // console.log(store);
+            return true
+        } else{
+            store[movieTimes[i]] = true;
+        }
+    }
+    return false
+}
+let example = [15,30,27,97,34,62]
+console.log(inflight(64,example))
