@@ -24,3 +24,4 @@ function fibonacciIterative(n) {
 }
 
 console.log(fibonacciIterative(8));
+console.log(fibonacciIterative(15));
