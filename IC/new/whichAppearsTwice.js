@@ -3,7 +3,8 @@
 // Write a function for finding the number that appears twice.
 
 
-
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 function whichAppearsTwice(numbers){
  let counter = {};
  for(var i = 0; i < numbers.length; i++){
