@@ -16,3 +16,5 @@ function whichAppearsTwice(numbers){
  }
  return 'no dupes found'   
 }
+
+console.log(whichAppearsTwice([2,5,6,2,1,4]))
