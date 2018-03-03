@@ -7,3 +7,22 @@
 // an array of unsortedScores
 // the highestPossibleScore in the game
 // and returns a sorted array of scores in less than O(n\lg{ n })O(nlgn) time.
+
+function countsort(unsortedScores, hiScore) {
+    let counter = [];
+    let result = [];
+
+    for (var i = 0; i <= hiScore; i++) {
+        counter[i] = 0;
+    }
+    for (var j = 0; j < unsortedScores.length; j++) {
+        counter[unsortedScores[j]]++
+    }
+
+    for (var y = hiScore; y >= 0; y--) {
+        for (var z = 0; z < counter[y]; z++) {
+            result.push(y)
+        }
+    }
+    return result
+}
