@@ -26,3 +26,6 @@ function countsort(unsortedScores, hiScore) {
     }
     return result
 }
+
+
+countsort([37, 89, 41, 65, 91, 53], 100)
