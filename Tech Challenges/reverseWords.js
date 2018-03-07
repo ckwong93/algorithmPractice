@@ -16,4 +16,5 @@ function wordReverse(string){
     return result.join(' ');
 }
 
-console.log(wordReverse('hello world'))
+console.log(wordReverse('hello world'));
+console.log(wordReverse('this is a test'))
