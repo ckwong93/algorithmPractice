@@ -18,5 +18,11 @@ function clockAngle(hr,min){
     return result
 
 }
-// console.log(clockAngle(2,30))
-console.log(clockAngle(4,42))
+console.log(clockAngle(4, 42)); // 249 degrees
+console.log(clockAngle(12, 01)); // 5.5 degrees
+console.log(clockAngle(12, 00)); // 0 degrees
+console.log(clockAngle(00, 01)); // 5.5 degrees
+console.log(clockAngle(11, 01)); // 324.5 degrees
+console.log(clockAngle(03, 30)); // 75 degrees
+console.log(clockAngle(03, 00)); // 90 degrees
+
