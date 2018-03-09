@@ -33,3 +33,8 @@ function pascalTriangle(num){
     return result;
 }
 
+console.log(pascalTriangle(1))
+console.log(pascalTriangle(2))
+console.log(pascalTriangle(3))
+console.log(pascalTriangle(4))
+console.log(pascalTriangle(5))
