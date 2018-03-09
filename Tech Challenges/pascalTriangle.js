@@ -9,10 +9,27 @@
  5 => 1  5 10 10  5  1 
 */
 
-// if input is zero, return array of 1
-// if input is one, return [1,1]
+function pascalTriangle(num){
+    let result = [];
+    let previous = [1,1];
+    let index = 2;
 
-// iterate through each set of numbers
-  // start at index 1 and end and the last index
-    // current index = sum of itself + item before it
-    // append 1 to the result array
+    if(num === 0){
+        return [1]
+    } else if (num === 1){
+        return [1,1]
+    }
+
+    while(index <= num){
+        result = [];
+        result.push(1);
+        for(let i = 1; i < index; i++){
+            result[i] = previous[i] + previous[i-1]
+        }
+        result.push(1);
+        previous = result;
+        index++;
+    }
+    return result;
+}
+
