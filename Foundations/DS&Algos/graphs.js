@@ -87,7 +87,20 @@ class Graph {
 
   // Time Complexity: O(V+E)
   // Auxiliary Space Complexity: O(1)
-  removeVertex(id) {}
+  removeVertex(id) {
+    if (!this.storage[id]) {
+      return false;
+    }
+    for (let vertex in this.storage) {
+      let edges = this.storage[vertex];
+      let index = edges.indexOf(id);
+      if (index >= 0) {
+        edges.splice(index, 1);
+      }
+    }
+    delete this.storage[id];
+    return true;
+  }
 
   // Time Complexity: O(E)
   // Auxiliary Space Complexity: O(1)
