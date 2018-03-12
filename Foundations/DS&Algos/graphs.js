@@ -103,7 +103,16 @@ class Graph {
 
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(1)
-  removeEdge(id1, id2) {}
+  removeEdge(id1, id2) {
+    if (this.storage[id1]) {
+      let id2Index = this.storage[id1].indexOf(id2);
+      if (id2Index >= 0) {
+        this.storage[id1].splice(id2Index, 1);
+        return true;
+      }
+    }
+    return false;
+  }
 
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(1)
