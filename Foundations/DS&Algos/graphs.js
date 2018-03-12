@@ -116,7 +116,14 @@ class Graph {
 
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(1)
-  isVertex(id) {}
+  isVertex(id) {
+    for (let items in this.storage) {
+      if (items == id) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(E)
