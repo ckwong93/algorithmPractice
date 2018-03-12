@@ -91,7 +91,15 @@ class Graph {
 
   // Time Complexity: O(E)
   // Auxiliary Space Complexity: O(1)
-  addEdge(id1, id2) {}
+  addEdge(id1, id2) {
+    if (this.storage[id1] && this.storage[id2]) {
+      if (this.storage[id1].indexOf(id2) < 0) {
+        this.storage[id1].push(id2);
+        return true;
+      }
+    }
+    return false;
+  }
 
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(1)
