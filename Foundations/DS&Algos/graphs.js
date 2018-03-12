@@ -127,7 +127,12 @@ class Graph {
 
   // Time Complexity: O(1)
   // Auxiliary Space Complexity: O(E)
-  neighbors(id) {}
+  neighbors(id) {
+    if (!this.storage[id]) {
+      return null;
+    }
+    return this.storage[id];
+  }
 }
 
 ////////////////////////////////////////////////////////////
