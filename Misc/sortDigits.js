@@ -40,3 +40,5 @@ function sortDigits(nums) {
   }
   return result;
 }
+
+console.log(sortDigits(8970));
