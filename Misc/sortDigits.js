@@ -42,3 +42,5 @@ function sortDigits(nums) {
 }
 
 console.log(sortDigits(8970));
+console.log(sortDigits(32445));
+console.log(sortDigits(10101));
