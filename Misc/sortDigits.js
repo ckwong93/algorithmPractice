@@ -18,7 +18,29 @@
 // 10101 --> 111
 
 
-function sortDigits(nums){
-  var counter = {};
-  var numsArray = num
+function sortDigits(nums) {
+  let counter = {};
+  let temp = null;
+  let result = "";
+
+  while (nums > 0) {
+    temp = nums % 10;
+    if (temp !== 0 && counter[temp]) {
+      counter[temp]++;
+    } else if (temp !== 0) {
+      counter[temp] = 1;
+    }
+    nums = Math.floor(nums / 10);
+  }
+  for (let i = 1; i <= 9; i++) {
+    while (counter[i] > 0) {
+      result += i;
+      counter[i]--;
+    }
+  }
+  return result;
 }
+
+console.log(sortDigits(8970));
+console.log(sortDigits(32445));
+console.log(sortDigits(10101));
